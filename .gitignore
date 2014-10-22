@@ -11,6 +11,9 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
+wp-content/themes/**/node_modules/
+wp-admin/
+wp-includes/
 
 # =========================
 # Operating System Files
