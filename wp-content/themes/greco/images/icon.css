@@ -1,0 +1,12 @@
+.icon{ background:url("icon.png") top left no-repeat; }
+.icon-hora{ width:52px; height:50px; background-position:-1px -1px; }
+.icon-marker{ width:43px; height:46px; background-position:-1px -52px; }
+.icon-musculacao{ width:85px; height:38px; background-position:-1px -99px; }
+.icon-arrow-left{ width:22px; height:36px; background-position:-54px -1px; }
+.icon-arrow-right{ width:22px; height:36px; background-position:-45px -52px; }
+.icon-twitter{ width:31px; height:31px; background-position:-1px -138px; }
+.icon-instagram{ width:31px; height:31px; background-position:-33px -138px; }
+.icon-facebook{ width:31px; height:31px; background-position:-1px -170px; }
+.icon-mag{ width:18px; height:17px; background-position:-68px -52px; }
+.icon-arrow-down{ width:13px; height:7px; background-position:-65px -138px; }
+

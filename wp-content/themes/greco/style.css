@@ -22,92 +22,6 @@ FUNÇÕES PADRÕES START
 /*********************************************************************
 FUNÇÕES PADRÕES END
 */
-/*
-NON-RESPONSIVE START
-**********************************************************************************************/
-/* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO START */
-.container {
-  max-width: none !important;
-  width: 960px;
-}
-.navbar-nav > li > a {
-  padding-top: 21px;
-  padding-bottom: 21px;
-}
-/* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO END */
-/* Finesse the page header spacing */
-.page-header {
-  margin-bottom: 30px;
-}
-.page-header .lead {
-  margin-bottom: 10px;
-}
-/* Non-responsive overrides** Utilitze the following CSS to disable the responsive-ness of the container,* grid system, and navbar.*/
-/* Reset the container */
-/* Always float the navbar header */
-.navbar-header {
-  float: left;
-}
-/* Undo the collapsing navbar */
-.navbar-collapse {
-  display: block !important;
-  height: auto !important;
-  padding-bottom: 0;
-  overflow: visible !important;
-}
-.navbar-toggle {
-  display: none;
-}
-.navbar-collapse {
-  border-top: 0;
-}
-.navbar-brand {
-  margin-left: -15px;
-}
-/* Always apply the floated nav */
-.navbar-nav {
-  float: left;
-  margin: 0;
-}
-.navbar-nav > li {
-  float: left;
-}
-/* Redeclare since we override the float above */
-.navbar-nav.navbar-right {
-  float: right;
-}
-/* Undo custom dropdowns */
-.navbar .navbar-nav .open .dropdown-menu {
-  position: absolute;
-  float: left;
-  background-color: #fff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-width: 0 1px 1px;
-  border-radius: 0 0 4px 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-}
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: #333;
-}
-.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
-.navbar .navbar-nav .open .dropdown-menu > .active > a,
-.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #fff !important;
-  background-color: #428bca !important;
-}
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-  color: #999 !important;
-  background-color: transparent !important;
-}
-/**********************************************************************************************
-NON-RESPONSIVE END
-*/
 ::selection {
   background-color: #ed3237;
   color: #FFF;
@@ -132,19 +46,13 @@ label {
 /*
 FONTS START
 **********************************************************************************************/
-.btn,
-.navbar-nav,
-.chamada strong,
-.box-newsletter .sendpress-submit {
+.btn {
   font-family: 'ralewayheavy', Arial, sans-serif;
   font-weight: normal;
 }
-.box-newsletter .box-header h2,
-.box-newsletter .widget-title {
-  font-family: 'fe-fontnormal', Arial, sans-serif;
-}
-.box-newsletter .box-header h2 .exclamation {
-  font-family: 'edo_szregular', Arial, sans-serif;
+.navbar {
+  font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;
+  font-weight: normal;
 }
 /**********************************************************************************************
 FONTS END
@@ -152,165 +60,49 @@ FONTS END
 /*
 ESTRUTURA START
 **********************************************************************************************/
-.extra-header {
-  background: url(imagem/site/bg-header.jpg) repeat-x top center;
+.extra-header .site-header .line-1 {
+  background: #ed3237;
 }
-.extra-header .line-1 {
-  height: 146px;
+.extra-header .site-header .navbar-brand {
+  padding: 18px 10px;
 }
-.extra-header .navbar {
-  border: 0;
-  margin-bottom: 0;
-}
-.extra-header .navbar-nav {
-  float: none;
-}
-.extra-header .navbar-nav > li {
-  width: 20%;
-  text-align: center;
-  font-size: 13px;
+.extra-header .site-header .navbar {
   text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.44);
+  font-size: 16px;
+}
+.extra-header .site-header .navbar .icone {
+  margin-left: 8px;
+}
+.extra-header .site-header .navbar-form {
   position: relative;
+  margin: 11.5px -10px;
 }
-.extra-header .navbar-nav > li + li > a {
-  border-left: 1px solid #151515;
-}
-.extra-header .navbar-nav > li.current-menu-item > a,
-.extra-header .navbar-nav > li.current-menu-parent > a {
-  background: #ed3237;
-  color: #FFF;
-}
-.extra-header .navbar-nav .sub-menu {
-  position: absolute;
-  background: #ed3237;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.3);
-  display: none;
-}
-.extra-header .navbar-nav .sub-menu > li > a {
-  display: block;
-  padding: 6px 20px;
-  color: #FFF;
-  text-shadow: none;
-  text-transform: none;
-}
-.extra-header .navbar-header {
-  float: none;
-}
-.extra-header .navbar-brand {
-  padding-top: 15px;
-  padding-bottom: 20px;
-  float: none;
-  display: inline-block;
-}
-.extra-header .box-newsletter,
-.extra-header .box-social {
-  float: right;
-}
-.extra-header .box-social {
-  padding-top: 40px;
-  width: 100px;
-}
-.extra-header .box-social .box-content > span {
-  float: left;
-  width: 50%;
-  height: 38px;
-  display: block;
-  text-align: center;
-}
-.extra-header .box-social .box-content > span > a,
-.extra-header .box-social .box-content > span > span {
-  display: inline-block;
-  max-width: 96%;
-}
-.extra-header .box-social .box-content > span * {
-  vertical-align: middle;
-}
-.extra-header .box-newsletter {
-  padding-top: 50px;
-  margin-right: 100px !important;
-}
-.extra-header .box-newsletter .box-header h2,
-.extra-header .box-newsletter .sendpress h2,
-.extra-header .box-newsletter .box-header .widget-title,
-.extra-header .box-newsletter .sendpress .widget-title {
-  color: #FFF;
-  font-size: 13px;
-  font-weight: normal;
-  margin: 0;
-}
-.extra-header .box-newsletter .box-header h2 strong,
-.extra-header .box-newsletter .sendpress h2 strong,
-.extra-header .box-newsletter .box-header .widget-title strong,
-.extra-header .box-newsletter .sendpress .widget-title strong {
-  font-size: 19px;
-  color: #a7da35;
-  font-weight: normal;
-}
-.extra-header .box-newsletter .form-control,
-.extra-header .box-newsletter .sp_email {
-  background-color: #1d1d1d;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  border: 1px solid #080808;
-  border-right-color: #373737;
-  border-bottom-color: #373737;
-}
-.extra-header .box-newsletter .btn,
-.extra-header .box-newsletter .sendpress-submit {
-  background-color: #232323;
-  color: #5c5c5c;
-}
-.extra-header .box-newsletter .sendpress-submit {
+.extra-header .site-header .navbar-form .form-control {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
   border: 0;
-  padding: 4px 10px;
-  margin-top: 0;
-  font-size: 12px;
-  transition: all 0.25s ease 0s;
+  z-index: 1;
+  height: 23px;
 }
-.extra-header .box-newsletter .sendpress-submit:hover {
-  background-color: #5c5c5c;
-  color: #232323;
-}
-.extra-header .box-newsletter #form-wrap {
-  width: 150px;
-  position: relative;
-}
-.extra-header .box-newsletter .sendpress-signup {
-  position: relative;
-}
-.extra-header .box-newsletter .submit {
+.extra-header .site-header .navbar-form .button {
   position: absolute;
-  top: -2px;
-  right: -68px;
+  right: 10px;
+  top: 0;
+  z-index: 2;
+  background: none;
+  border: 0;
+  padding: 1px 8px;
 }
-.extra-header [class^='col-'] > [class^='box-'] + [class^='box-'] {
-  margin-right: 30px;
+.extra-header .site-header .header-social {
+  float: right;
+  padding: 10px 20px;
 }
-.extra-central .site-central {
-  min-height: 730px;
-}
-.site-content {
-  background: #FFF;
-  padding: 20px;
-}
-.extra-footer {
-  color: #5c5c5c;
-}
-.extra-footer .site-footer {
-  background: url(imagem/site/bg-footer.jpg) no-repeat center top;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  font-size: 10px;
-}
-.extra-footer .site-footer .footer-center {
-  padding-top: 10px;
+.extra-header .site-header .header-social a {
+  display: inline-block;
+  margin-left: 8px;
 }
 /**********************************************************************************************
 ESTRUTURA END
@@ -341,60 +133,6 @@ CLASSES START
   display: block;
   margin: 0 auto;
 }
-.btn-gray {
-  background: #EEE;
-  color: #C93F2A;
-}
-.btn {
-  font-size: 13px;
-  text-transform: uppercase;
-}
-.btn-default {
-  background-color: #5c5c5c;
-}
-.btn-primary {
-  color: #5c5c5c;
-}
-.box-banner {
-  margin-bottom: 18px;
-}
-.box-banner,
-.box-banner .cycle-slideshow,
-.box-banner .cycle-slideshow li {
-  width: 100%;
-}
-.box-banner .cycle-slideshow li img {
-  max-width: 100%;
-}
-.box-chamadas .chamada {
-  height: 182px;
-  background: #FFF;
-  font-size: 17px;
-  line-height: 1;
-  padding: 14px 18px;
-  display: block;
-  color: #5c5c5c;
-}
-.box-chamadas .chamada span {
-  display: inline-block;
-}
-.box-chamadas .chamada strong {
-  display: inline-block;
-  line-height: .8;
-}
-.box-chamadas .chamada small {
-  font-size: 14px;
-}
-.box-chamadas .chamada.red {
-  background: #ed3237;
-  color: #FFF;
-}
-.box-chamadas .chamada.red:hover {
-  box-shadow: 0 0 10px #C30;
-}
-.box-chamadas .chamada:hover {
-  box-shadow: 0 0 10px #FFF;
-}
 .entry-content:before,
 .entry-content:after {
   display: table;
@@ -402,28 +140,6 @@ CLASSES START
 }
 .entry-content:after {
   clear: both;
-}
-.form-control {
-  background-color: #5c5c5c;
-  color: #ed3237;
-}
-.modal-content {
-  background: url(imagem/site/bg-central.jpg) no-repeat center top;
-  color: #5c5c5c;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.modal-content .modal-header {
-  background: url(imagem/site/bg-header.jpg) repeat-x top;
-  padding: 20px;
-  border-bottom: 0;
-}
-.modal-content .modal-footer {
-  border-top: 1px solid #463415;
 }
 .inline-block {
   display: inline-block;
@@ -433,7 +149,7 @@ CLASSES START
   background-repeat: no-repeat;
   vertical-align: middle;
   display: inline-block;
-  background-image: url(imagem/site/icon.png);
+  background-image: url(images/icon.png);
 }
 .space {
   width: 1%;
@@ -455,15 +171,6 @@ JQUERY UI END
 */
 @media (max-width: 767px) {
   /*    .site-geral:before {content:"TABLET";}*/
-  .extra-footer .site-footer * {
-    text-align: center;
-  }
-  .box-home .desc {
-    max-width: none;
-  }
-  .box-home .desc .text {
-    width: 60%;
-  }
 }
 @media (max-width: 480px) {
   /*#GERAL:before {content:"MOBILE";}*/

@@ -37,17 +37,6 @@ FUNÇÕES PADRÕES START
 /*********************************************************************
 FUNÇÕES PADRÕES END
 */
-/*
-NON-RESPONSIVE START
-**********************************************************************************************/
-/* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO START */
-.container {max-width: none !important;width: 960px;}
-.navbar-nav > li > a {padding-top: 21px;padding-bottom:21px;}
-/* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO END */
-/* Finesse the page header spacing */.page-header {margin-bottom: 30px;}.page-header .lead {margin-bottom: 10px;}/* Non-responsive overrides** Utilitze the following CSS to disable the responsive-ness of the container,* grid system, and navbar.*//* Reset the container *//* Always float the navbar header */.navbar-header {float: left;}/* Undo the collapsing navbar */.navbar-collapse {display: block !important;height: auto !important;padding-bottom: 0;overflow: visible !important;}.navbar-toggle {display: none;}.navbar-collapse {border-top: 0;}.navbar-brand {margin-left: -15px;}/* Always apply the floated nav */.navbar-nav {float: left;margin: 0;}.navbar-nav > li {float: left;}/* Redeclare since we override the float above */.navbar-nav.navbar-right {float: right;}/* Undo custom dropdowns */.navbar .navbar-nav .open .dropdown-menu {position: absolute;float: left;background-color: #fff;border: 1px solid #cccccc;border: 1px solid rgba(0, 0, 0, 0.15);border-width: 0 1px 1px;border-radius: 0 0 4px 4px;-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);}.navbar-default .navbar-nav .open .dropdown-menu > li > a {color: #333;}.navbar .navbar-nav .open .dropdown-menu > li > a:hover,.navbar .navbar-nav .open .dropdown-menu > li > a:focus,.navbar .navbar-nav .open .dropdown-menu > .active > a,.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {color: #fff !important;background-color: #428bca !important;}.navbar .navbar-nav .open .dropdown-menu > .disabled > a,.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {color: #999 !important;background-color: transparent !important;}
-/**********************************************************************************************
-NON-RESPONSIVE END
-*/
 ::selection {background-color: @primary-color;color: #FFF;}
 ::-moz-selection {background-color: @primary-color;color: #FFF;}
 small {display: inline-block;line-height: 1.1;}
@@ -57,9 +46,8 @@ label {font-weight: normal;}
 /*
 FONTS START
 **********************************************************************************************/
-.btn, .navbar-nav, .chamada strong, .box-newsletter .sendpress-submit {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
-.box-newsletter .box-header h2, .box-newsletter .widget-title {font-family: 'fe-fontnormal', Arial, sans-serif;}
-.box-newsletter .box-header h2 .exclamation {font-family: 'edo_szregular', Arial, sans-serif;}
+.btn {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
+.navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
 FONTS END
 */
@@ -67,75 +55,22 @@ FONTS END
 ESTRUTURA START
 **********************************************************************************************/
 .extra-header {
-    background: url(imagem/site/bg-header.jpg) repeat-x top center;
-    .site-header {}
-    .line-1 {height: 146px;}
-    .navbar {border:0;margin-bottom: 0;}
-    .navbar-nav {
-        float: none;
-        > li {
-            width: 20%;text-align: center;font-size: 13px;text-transform: uppercase;text-shadow:0 0 8px rgba(0, 0, 0, .44);position: relative;
-            + li {
-                > a {border-left:1px solid #151515;}
-            }
-            &.current-menu-item, &.current-menu-parent {
-                > a {background: @primary-color ;color: #FFF;}
-            }
+    .site-header {
+        .line-1 {background: @primary-color;}
+        .navbar-brand {padding:18px 10px;}
+        .navbar {
+            text-transform: uppercase;font-size: 16px;
+            .icone {margin-left: 8px;}
         }
-        .sub-menu {
-            position: absolute;background: @primary-color;left: 0;top: 100%;width: 100%;box-shadow:inset 0px 10px 10px rgba(0, 0, 0, .3);display: none;
-            > li {
-                > a {display: block;padding:6px 20px;color: #FFF;text-shadow:none;text-transform: none;}
-            }
+        .navbar-form {
+            position: relative;margin:11.5px -10px;
+            .form-control {-webkit-border-radius: 50px;-moz-border-radius: 50px;-ms-border-radius: 50px;-o-border-radius: 50px;border-radius: 50px;border:0;z-index: 1;height: 23px;}
+            .button {position: absolute;right: 10px;top: 0;z-index: 2;background: none;border:0;padding:1px 8px;}
         }
-    }
-    .navbar-header {float: none;}
-    .navbar-brand {padding-top:15px;padding-bottom: 20px;float:none;display: inline-block;}
-    .box-newsletter, .box-social {float: right;}
-    .box-social {
-        padding-top: 40px;width: 100px;
-        .box-content {
-            > span {
-                float: left;width: 50%;height: 38px;display: block;text-align: center;
-                > a, > span {display: inline-block; max-width: 96%;}
-                * {vertical-align: middle;}
-            }
+        .header-social {
+            float: right;padding:10px 20px;
+            a {display: inline-block;margin-left: 8px;}
         }
-    }
-    .box-newsletter {
-        padding-top: 50px;margin-right: 100px !important;
-        .box-header, .sendpress {
-            h2, .widget-title {
-                color: #FFF;font-size: 13px;font-weight: normal;margin:0;
-                strong {font-size: 19px;color: @secondary-color;font-weight: normal;}
-            }
-        }
-        .form-control, .sp_email {background-color: #1d1d1d;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;-o-border-radius: 0;border-radius: 0;border:1px solid #080808;border-right-color: #373737;border-bottom-color: #373737;}
-        .btn, .sendpress-submit {background-color: #232323;color: @third-color;}
-        .sendpress-submit {
-            border:0;padding:4px 10px;margin-top:0;font-size: 12px;transition: all 0.25s ease 0s;
-            &:hover {background-color: #5c5c5c;color: #232323;}
-        }
-        #form-wrap {width:150px;position: relative;}
-        .sendpress-signup {position: relative;}
-        .submit {position: absolute;top: -2px;right:-68px;}
-    }
-    [class^='col-'] {
-        > [class^='box-'] {
-            + [class^='box-'] {margin-right: 30px;}
-        }
-    }
-}
-.extra-central {
-
-    .site-central {min-height: 730px;}
-}
-.site-content {background: #FFF;padding:20px;} 
-.extra-footer {
-    color: @third-color;
-    .site-footer {
-        background: url(imagem/site/bg-footer.jpg) no-repeat center top;padding-top:18px;padding-bottom: 18px;font-size: 10px;
-        .footer-center {padding-top:10px;}
     }
 }
 /**********************************************************************************************
@@ -148,43 +83,13 @@ CLASSES START
 .alignleft {margin-right: 18px;margin-bottom: 10px;float: left;}
 .alignright {margin-left: 18px;margin-bottom: 10px;float: right;}
 .aligncenter {display: block;margin:0 auto;}
-.btn-gray {background: #EEE;color:#C93F2A;}
-.btn {font-size: 13px;text-transform: uppercase;}
-.btn-default {background-color: @third-color;}
-.btn-primary {color: @third-color;}
-.box-banner {
-    margin-bottom: 18px;
-    &, .cycle-slideshow, .cycle-slideshow li {width: 100%;}
-    .cycle-slideshow {
-        li {
-            img {max-width: 100%;}
-        }
-    }
-}
-.box-chamadas {
-    .chamada {
-        height: 182px;background: #FFF;font-size: 17px;line-height: 1;padding:14px 18px;display: block;color: @third-color;
-        span {display: inline-block;}
-        strong {display: inline-block;line-height: .8;}
-        small {font-size:14px;}
-        &.red {
-            background:@primary-color;color:#FFF;
-            &:hover {box-shadow:0 0 10px #C30;}
-        }
-        &:hover {box-shadow:0 0 10px #FFF;}
-    }
-}
+
 .entry-content:before, .entry-content:after {display: table;content: " ";}
 .entry-content:after {clear: both;}
-.form-control {background-color: @third-color;color:@primary-color;}
-.modal-content {
-    background: url(imagem/site/bg-central.jpg) no-repeat center top; color: @third-color;-webkit-border-radius: 5px;-moz-border-radius: 5px;-ms-border-radius: 5px;-o-border-radius: 5px;border-radius: 5px;overflow: hidden;
-    .modal-header {background: url(imagem/site/bg-header.jpg) repeat-x top;padding:20px;border-bottom: 0;}
-    .modal-footer {border-top: 1px solid #463415;}
-}
+
 
 .inline-block {display:inline-block;}
-[class^='icon-'], [class*='icon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(imagem/site/icon.png);}
+[class^='icon-'], [class*='icon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(images/icon.png);}
 
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
 .relative {position: relative;}
@@ -203,17 +108,6 @@ JQUERY UI END
 }
 @media (max-width: 767px) {
    /*    .site-geral:before {content:"TABLET";}*/
-   .extra-footer {
-    .site-footer {
-        * {text-align: center;}
-    }
-}
-.box-home {
-    .desc {
-        max-width: none;
-        .text {width: 60%;}
-    }
-}
 }
 @media (max-width: 480px) {
    /*#GERAL:before {content:"MOBILE";}*/
