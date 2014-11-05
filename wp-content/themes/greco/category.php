@@ -11,9 +11,9 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+<section id="primary" class="content-area">
+	<div id="content" class="site-content" role="main">
+		<div class="container">
 			<?php if ( have_posts() ) : ?>
 
 			<header class="archive-header">
@@ -21,16 +21,16 @@ get_header(); ?>
 
 				<?php
 					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
+				$term_description = term_description();
+				if ( ! empty( $term_description ) ) :
+					printf( '<div class="taxonomy-description">%s</div>', $term_description );
+				endif;
 				?>
 			</header><!-- .archive-header -->
 
 			<?php
 					// Start the Loop.
-					while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post();
 
 					/*
 					 * Include the post format-specific template for the content. If you want to
@@ -43,16 +43,16 @@ get_header(); ?>
 					// Previous/next page navigation.
 					twentyfourteen_paging_nav();
 
-				else :
+					else :
 					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
+						get_template_part( 'content', 'none' );
 
-				endif;
-			?>
-		</div><!-- #content -->
-	</section><!-- #primary -->
+					endif;
+					?>
+				</div> <!-- .container -->
+			</div><!-- #content -->
+		</section><!-- #primary -->
 
-<?php
-get_sidebar( 'content' );
-get_sidebar();
-get_footer();
+		<?php
+		get_sidebar( 'content' );
+		get_footer();

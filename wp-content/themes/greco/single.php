@@ -9,11 +9,12 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+<div id="primary" class="content-area">
+	<div id="content" class="site-content" role="main">
+		<div class="container">
 			<?php
 				// Start the Loop.
-				while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post();
 
 					/*
 					 * Include the post format-specific template for the content. If you want to
@@ -29,12 +30,12 @@ get_header(); ?>
 					if ( comments_open() || get_comments_number() ) {
 						comments_template();
 					}
-				endwhile;
-			?>
-		</div><!-- #content -->
-	</div><!-- #primary -->
+					endwhile;
+					?>
+				</div> <!-- .container -->
+			</div><!-- #content -->
+		</div><!-- #primary -->
 
-<?php
-get_sidebar( 'content' );
-get_sidebar();
-get_footer();
+		<?php
+		get_sidebar( 'content' );
+		get_footer();

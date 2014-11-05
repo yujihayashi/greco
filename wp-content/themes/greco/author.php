@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
+<div class="container">
 			<?php if ( have_posts() ) : ?>
 
 			<header class="archive-header">
@@ -65,10 +65,10 @@ get_header(); ?>
 				endif;
 			?>
 
+</div> <!-- .container -->
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
 <?php
 get_sidebar( 'content' );
-get_sidebar();
 get_footer();
