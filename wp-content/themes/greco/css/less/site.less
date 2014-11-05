@@ -47,7 +47,9 @@ label {font-weight: normal;}
 FONTS START
 **********************************************************************************************/
 .btn {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
-.navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
+.box-modalidades .plus, .box-chamadas, .box-chamadas .media-heading, .navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
+.box-modalidades {font-family: 'akzidenz-grotesk_next_regulRg', Arial, sans-serif;font-weight: normal;}
+.box-modalidades .media-heading {font-family: 'akzidenz-grotesk_bq_superRg', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
 FONTS END
 */
@@ -59,8 +61,9 @@ ESTRUTURA START
         .line-1 {background: @primary-color;}
         .navbar-brand {padding:18px 10px;}
         .navbar {
-            text-transform: uppercase;font-size: 16px;
+            text-transform: uppercase;font-size: 16px;border:0;margin:0;
             .icone {margin-left: 8px;}
+            .container {border-bottom: 6px solid @primary-color;margin-bottom: -4px;}
         }
         .navbar-form {
             position: relative;margin:11.5px -10px;
@@ -73,6 +76,9 @@ ESTRUTURA START
         }
     }
 }
+.home {
+    .bg {background: url(images/bg-home.jpg) no-repeat center;background-size: cover;padding-top:25px;}
+}
 /**********************************************************************************************
 ESTRUTURA END 
 */
@@ -82,7 +88,47 @@ CLASSES START
 [class^='lista-'], [class^='lista-'], [class^='menu-'], [class^='menu-'] ul, .cycle-slideshow {list-style:none;margin-bottom:0;padding-left:0;}
 .alignleft {margin-right: 18px;margin-bottom: 10px;float: left;}
 .alignright {margin-left: 18px;margin-bottom: 10px;float: right;}
-.aligncenter {display: block;margin:0 auto;}  
+.aligncenter {display: block;margin:0 auto;}
+
+.box-banner {
+    position: relative;width: 850px;margin:0 auto;padding:4px;background: @primary-color; margin-bottom: 22px;
+    .cycle-slideshow, .cycle-slideshow li {width: 100%;height: 374px;}
+    .cycle-slideshow {
+        position: relative;z-index: 1;
+    }
+    .cycle-nav {
+        left: 0;bottom: 0;right: 0;position: absolute;z-index: 2;text-align: center;padding:10px 0;
+        span {
+            display: inline-block;cursor: pointer;width: 15px;height: 15px;background: #FFF;border:2px solid @primary-color;transition:all 0.25s ease 0s;text-indent:-1000px;overflow: hidden;box-shadow:3px 3px 2px rgba(0, 0, 0, 0.64);-webkit-border-radius: 50px;-moz-border-radius: 50px;-ms-border-radius: 50px;-o-border-radius: 50px;border-radius: 50px;margin:0 5px;
+            &.cycle-pager-active {background:@primary-color;}
+        }
+    }
+}
+.box-chamadas {
+    color: #FFF;font-size: 12px;text-transform: uppercase;margin-bottom: 100px;
+    .media-heading {text-transform: uppercase;font-size: 17px;}
+}
+.box-modalidades {
+    background: @primary-color;font-size: 12px;color: #201e1e;padding-bottom: 52px;
+    .box-cycle {margin:0 auto;}
+    .box-cycle, .cycle-slideshow {width: 850px;position: relative;}
+    .cycle-slideshow {
+        margin-top:-40px;
+        li {
+            width: 425px;vertical-align: top;
+            * {white-space: normal;}
+        }
+    }
+    .media {overflow: visible;}
+    .media > .pull-left {}
+    .media-heading {text-transform: uppercase;font-size: 18px;color: #FFF;margin-bottom: 15px;}
+    .media-body {padding-top:46px;padding-right: 20px;}
+    .container {position: relative;}
+    .cycle-prev, .cycle-next {position: absolute;top: 70px;}
+    .cycle-prev {left: -46px;}
+    .cycle-next {right: -46px;}
+    .plus {display: inline-block;background: #580808;width: 130px;padding:2px 6px;font-size: 13px;}
+}
 
 .entry-content:before, .entry-content:after {display: table;content: " ";}
 .entry-content:after {clear: both;}
