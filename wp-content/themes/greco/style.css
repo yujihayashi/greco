@@ -50,6 +50,11 @@ FONTS START
   font-family: 'ralewayheavy', Arial, sans-serif;
   font-weight: normal;
 }
+.page-modalidades .title,
+.page-modalidades .desc {
+  font-family: 'akzidenz-grotesk_nextXLtIt', Arial, sans-serif;
+  font-weight: normal;
+}
 .box-modalidades .plus,
 .box-chamadas,
 .box-chamadas .media-heading,
@@ -121,10 +126,58 @@ ESTRUTURA START
   display: inline-block;
   margin-left: 8px;
 }
+.extra-footer {
+  background: #161616;
+}
+.extra-footer .site-footer {
+  padding: 15px 0;
+}
+.extra-footer .site-footer,
+.extra-footer .site-footer a {
+  color: #FFF;
+}
+.extra-footer .footer-header {
+  display: block;
+}
+.extra-footer .footer-header-sm {
+  font-size: 11px;
+}
+.extra-footer .footer-social > span,
+.extra-footer .box-parceiros > span,
+.extra-footer .footer-social > a,
+.extra-footer .box-parceiros > a {
+  display: inline-block;
+}
+.extra-footer .footer-social > span + span,
+.extra-footer .box-parceiros > span + span,
+.extra-footer .footer-social > a + span,
+.extra-footer .box-parceiros > a + span,
+.extra-footer .footer-social > span + a,
+.extra-footer .box-parceiros > span + a,
+.extra-footer .footer-social > a + a,
+.extra-footer .box-parceiros > a + a {
+  margin-left: 10px;
+}
 .home .bg {
   background: url(images/bg-home.jpg) no-repeat center;
   background-size: cover;
   padding-top: 25px;
+}
+.page .site-main,
+.archive .site-main,
+.category .site-main {
+  background: url(images/bg-home.jpg) no-repeat center;
+  background-size: cover;
+  color: #FFF;
+}
+.page .site-main .entry-header,
+.archive .site-main .entry-header,
+.category .site-main .entry-header,
+.page .site-main .page-header,
+.archive .site-main .page-header,
+.category .site-main .page-header {
+  text-align: center;
+  text-transform: uppercase;
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -212,6 +265,24 @@ CLASSES START
   text-transform: uppercase;
   font-size: 17px;
 }
+.box {
+  background: #ed3237;
+}
+.box .imagem {
+  width: 100%;
+}
+.box .imagem img {
+  width: 100%;
+}
+.box .conteudo {
+  padding: 10px 20px 20px;
+  line-height: 1.1;
+  min-height: 230px;
+}
+.box .media-heading {
+  font-size: 28px;
+  text-align: center;
+}
 .box-modalidades {
   background: #ed3237;
   font-size: 12px;
@@ -287,6 +358,86 @@ CLASSES START
   vertical-align: middle;
   display: inline-block;
   background-image: url(images/icon.png);
+}
+.page-modalidades {
+  padding: 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+.page-modalidades,
+.page-modalidades .cycle-slideshow,
+.page-modalidades .cycle-slideshow li,
+.page-modalidades .cycle-content,
+.page-modalidades .imagem {
+  height: 334px;
+}
+.page-modalidades .cycle-slideshow {
+  width: 100%;
+}
+.page-modalidades .cycle-slideshow li {
+  width: 238px;
+  overflow: hidden;
+}
+.page-modalidades .cycle-slideshow li * {
+  white-space: normal;
+}
+.page-modalidades .cycle-slideshow .cycle-content {
+  position: relative;
+}
+.page-modalidades .cycle-slideshow .imagem {
+  position: relative;
+  z-index: 1;
+}
+.page-modalidades .cycle-slideshow .imagem img {
+  height: 100%;
+}
+.page-modalidades .cycle-slideshow .conteudo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(images/bg-black.png) repeat;
+  z-index: 2;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 1.3;
+  padding: 10px 10px;
+  display: none;
+}
+.page-modalidades .cycle-slideshow .title {
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.page-modalidades .cycle-slideshow .plus {
+  display: inline-block;
+  background: #580808;
+  padding: 4px 30px 4px 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+}
+.page-modalidades .cycle-prev,
+.page-modalidades .cycle-next {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 70px;
+  height: 334px;
+  text-align: center;
+  padding: 150px 0;
+  float: left;
+  background: #ed3237;
+}
+.page-modalidades .cycle-prev {
+  left: 0;
+}
+.page-modalidades .cycle-next {
+  right: 0;
+}
+.page-header {
+  border: 0;
+  padding: 0;
 }
 .space {
   width: 1%;

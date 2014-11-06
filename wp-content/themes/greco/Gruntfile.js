@@ -44,9 +44,9 @@ module.exports = function( grunt ) {
             ],
 
             options: {
-                /*livereload: {
+                livereload: {
                     port: 35729
-                }*/
+                }
             },
             tasks : [ 'less' ]
         }

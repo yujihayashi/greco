@@ -47,6 +47,7 @@ label {font-weight: normal;}
 FONTS START
 **********************************************************************************************/
 .btn {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
+.page-modalidades .title, .page-modalidades .desc {font-family: 'akzidenz-grotesk_nextXLtIt', Arial, sans-serif;font-weight: normal;}
 .box-modalidades .plus, .box-chamadas, .box-chamadas .media-heading, .navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
 .box-modalidades {font-family: 'akzidenz-grotesk_next_regulRg', Arial, sans-serif;font-weight: normal;}
 .box-modalidades .media-heading {font-family: 'akzidenz-grotesk_bq_superRg', Arial, sans-serif;font-weight: normal;}
@@ -76,8 +77,29 @@ ESTRUTURA START
         }
     }
 }
+.extra-footer {
+    background: #161616;
+    .site-footer { 
+        padding:15px 0;
+        &, a {color:#FFF;}
+    }
+    .footer-header {display: block;}
+    .footer-header-sm {font-size: 11px;}
+    .footer-social, .box-parceiros {
+        > span, > a {
+            display: inline-block;
+            & + span, & + a {margin-left: 10px;}
+        }
+    }
+}
 .home {
     .bg {background: url(images/bg-home.jpg) no-repeat center;background-size: cover;padding-top:25px;}
+}
+.page, .archive, .category {
+    .site-main {
+        background: url(images/bg-home.jpg) no-repeat center;background-size: cover;color: #FFF;
+        .entry-header, .page-header {text-align: center;text-transform: uppercase;}
+    }
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -108,6 +130,15 @@ CLASSES START
     color: #FFF;font-size: 12px;text-transform: uppercase;margin-bottom: 100px;
     .media-heading {text-transform: uppercase;font-size: 17px;}
 }
+.box {
+    background: @primary-color;
+    .imagem {
+        width: 100%;
+        img {width: 100%;}
+    }
+    .conteudo {padding:10px 20px 20px;line-height: 1.1;min-height: 230px;}
+    .media-heading {font-size: 28px;text-align: center;}
+}
 .box-modalidades {
     background: @primary-color;font-size: 12px;color: #201e1e;padding-bottom: 52px;
     .box-cycle {margin:0 auto;}
@@ -137,6 +168,30 @@ CLASSES START
 .inline-block {display:inline-block;}
 [class^='icon-'], [class*='icon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(images/icon.png);}
 
+.page-modalidades {
+    padding:0 70px;position: relative;overflow: hidden;
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-content, .imagem {height: 334px;}
+    .cycle-slideshow {
+        width: 100%;
+        li {
+            width: 238px;overflow: hidden;
+            * {white-space: normal;}
+        }
+        .cycle-content {position: relative;}
+        .imagem {
+            position: relative;z-index: 1;
+            img {height: 100%;}
+        }
+        .conteudo {position: absolute;left: 0;top: 0;right: 0;bottom: 0;background: url(images/bg-black.png) repeat;z-index: 2;color: #FFF;font-size: 14px;line-height: 1.3;padding:10px 10px;display: none;}
+        .title {text-transform: uppercase;font-size: 36px;}
+        .plus {display: inline-block;background: #580808;padding:4px 30px 4px 8px;position: absolute;bottom: 20px;left: 0;}
+    }
+    .cycle-prev, .cycle-next {display: block;position:absolute;top:0;width: 70px;height: 334px;text-align: center;padding:150px 0;float: left;background: @primary-color;}
+    .cycle-prev {left: 0;}
+    .cycle-next {right: 0;}
+}
+
+.page-header {border:0;padding:0;}
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
 .relative {position: relative;}
 /**********************************************************************************************
