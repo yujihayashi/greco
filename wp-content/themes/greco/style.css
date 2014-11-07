@@ -341,6 +341,42 @@ CLASSES START
   padding: 2px 6px;
   font-size: 13px;
 }
+.box-tabs {
+  background: #ed3237;
+}
+.box-tabs .nav-tabs {
+  border: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.box-tabs .nav-tabs > li {
+  margin: 0;
+  padding: 0;
+  float: none;
+  display: inline-block;
+}
+.box-tabs .nav-tabs > li > a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  color: #580808;
+  padding: 40px 60px;
+}
+.box-tabs .nav-tabs > li > a:hover,
+.box-tabs .nav-tabs > li > a:focus {
+  background: none;
+}
+.box-tabs .nav-tabs > li.active > a,
+.box-tabs .nav-tabs > li.active > a:hover,
+.box-tabs .nav-tabs > li.active > a:focus {
+  background: #FFF;
+  border: 0;
+  color: #580808;
+}
 .entry-content:before,
 .entry-content:after {
   display: table;
