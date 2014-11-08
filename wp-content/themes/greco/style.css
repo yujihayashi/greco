@@ -175,7 +175,10 @@ ESTRUTURA START
 .category .site-main .entry-header,
 .page .site-main .page-header,
 .archive .site-main .page-header,
-.category .site-main .page-header {
+.category .site-main .page-header,
+.page .site-main .archive-header,
+.archive .site-main .archive-header,
+.category .site-main .archive-header {
   text-align: center;
   text-transform: uppercase;
 }
@@ -394,6 +397,9 @@ CLASSES START
   vertical-align: middle;
   display: inline-block;
   background-image: url(images/icon.png);
+}
+.lista-unidades {
+  margin-bottom: 40px;
 }
 .page-modalidades {
   padding: 0 70px;

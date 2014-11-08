@@ -13,8 +13,8 @@ get_header(); ?>
 
 <section id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
+		<?php if ( have_posts() ) : ?>
 		<div class="container">
-			<?php if ( have_posts() ) : ?>
 
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( single_cat_title( '', false ) ); ?></h1>
@@ -33,28 +33,43 @@ get_header(); ?>
 					// Start the Loop.
 				while ( have_posts() ) : the_post();
 				?>
-				<!-- Tab panes -->
-				<div role="tabpanel" class="tab-pane fade" id="home">
+				<div role="tabpanel" class="tab-pane fade" id="unidade-<?php echo get_the_ID(); ?>">
+
 					<div class="row">
 						<div class="col-md-4 col-xs-offset-1">
 
 						</div>
 						<div class="col-md-7">
-							<?php
-					/*
-					 * Include the post format-specific template for the content. If you want to
-					 * use this in a child theme, then include a file called called content-___.php
-					 * (where ___ is the post format) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+							<h2><?php the_title(); ?></h2>
+							<?php the_content(); ?>
+						</div> <!-- .col-md-7 -->
+					</div> <!-- .row -->
+				</div> <!-- .tab-pane -->
+				<?php
+				endwhile;
+				?>
+			</div> <!-- .lista-unidades -->
+
+
+		</div> <!-- .container -->
+		<!-- Nav tabs -->
+		<div class="box-tabs">
+			<div class="container">
+				<ul class="nav nav-tabs" role="tablist">
+
+					<?php
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
 					?>
-				</div> <!-- .col-md-7 -->
-			</div> <!-- .row -->
-		</div> <!-- .tab-pane -->
-		<?php
-		endwhile;
+					<li role="presentation" class=""><a href="#unidade-<?php echo get_the_ID(); ?>" role="tab" data-toggle="tab"><?php the_title(); ?></a></li>
+
+					<?php
+					endwhile;
 					?>
-	</div> <!-- .lista-unidades -->
+				</ul>
+			</div> <!-- .container -->
+		</div> <!-- .box-tabs -->
+
 		<?php
 					// Previous/next page navigation.
 
@@ -64,27 +79,13 @@ get_header(); ?>
 
 		endif;
 		?>
-
-
-</div> <!-- .container -->
-<!-- Nav tabs -->
-<div class="box-tabs">
-	<div class="container">
-		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Umarizal</a></li>
-			<li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Marco</a></li>
-			<li role="presentation"><a href="#messages" role="tab" data-toggle="tab">São Brás</a></li>
-			<li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Campina</a></li>
-		</ul>
-	</div> <!-- .container -->
-</div> <!-- .box-tabs -->
-
-</div><!-- #content -->
+	</div><!-- #content -->
 </section><!-- #primary -->
 <script type="text/javascript">
-	jQuery(document).ready(function () {
-		$()
-	});
+jQuery(document).ready(function () {
+	$('.lista-unidades .tab-pane:first-child').addClass('active in');
+	$('.box-tabs .nav-tabs li:first-child').addClass('active');
+});
 </script>
 <?php
 get_sidebar( 'content' );

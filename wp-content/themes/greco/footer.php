@@ -45,6 +45,16 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<?php if (is_category('unidades')): ?>
+
+	<script type="text/javascript">
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		for(var i in gmpAllMapsInfo){
+			gmapPreview.prepareToDraw(gmpAllMapsInfo[i].id);
+		}
+	})
+	</script>
+<?php endif; //if (is_category('unidades')): ?>
 <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
