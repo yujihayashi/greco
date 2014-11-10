@@ -82,7 +82,7 @@ function twentyfourteen_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'twentyfourteen' ),
 		'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
-	) );
+		) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -90,7 +90,7 @@ function twentyfourteen_setup() {
 	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-	) );
+		) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -98,18 +98,18 @@ function twentyfourteen_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-	) );
+		) );
 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'twentyfourteen_custom_background_args', array(
 		'default-color' => 'f5f5f5',
-	) ) );
+		) ) );
 
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
 		'featured_content_filter' => 'twentyfourteen_get_featured_posts',
 		'max_posts' => 6,
-	) );
+		) );
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -175,7 +175,7 @@ function twentyfourteen_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
 	register_sidebar( array(
 		'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
 		'id'            => 'sidebar-2',
@@ -184,7 +184,7 @@ function twentyfourteen_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget Area', 'twentyfourteen' ),
 		'id'            => 'sidebar-3',
@@ -193,7 +193,7 @@ function twentyfourteen_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
@@ -253,7 +253,7 @@ function twentyfourteen_scripts() {
 		wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
 			'prevText' => __( 'Previous', 'twentyfourteen' ),
 			'nextText' => __( 'Next', 'twentyfourteen' )
-		) );
+			) );
 	}
 
 	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140616', true );
@@ -308,7 +308,7 @@ function twentyfourteen_the_attached_image() {
 		'post_mime_type' => 'image',
 		'order'          => 'ASC',
 		'orderby'        => 'menu_order ID',
-	) );
+		) );
 
 	// If there is more than 1 attachment in a gallery...
 	if ( count( $attachment_ids ) > 1 ) {
@@ -333,7 +333,7 @@ function twentyfourteen_the_attached_image() {
 	printf( '<a href="%1$s" rel="attachment">%2$s</a>',
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
-	);
+		);
 }
 endif;
 
@@ -349,15 +349,15 @@ function twentyfourteen_list_authors() {
 		'orderby' => 'post_count',
 		'order'   => 'DESC',
 		'who'     => 'authors',
-	) );
+		) );
 
 	foreach ( $contributor_ids as $contributor_id ) :
 		$post_count = count_user_posts( $contributor_id );
 
 		// Move on if user has not published a post (yet).
-		if ( ! $post_count ) {
-			continue;
-		}
+	if ( ! $post_count ) {
+		continue;
+	}
 	?>
 
 	<div class="contributor">
@@ -417,23 +417,23 @@ function twentyfourteen_body_classes( $classes ) {
 		|| is_page_template( 'page-templates/contributors.php' )
 		|| is_attachment() ) {
 		$classes[] = 'full-width';
-	}
+}
 
-	if ( is_active_sidebar( 'sidebar-3' ) ) {
-		$classes[] = 'footer-widgets';
-	}
+if ( is_active_sidebar( 'sidebar-3' ) ) {
+	$classes[] = 'footer-widgets';
+}
 
-	if ( is_singular() && ! is_front_page() ) {
-		$classes[] = 'singular';
-	}
+if ( is_singular() && ! is_front_page() ) {
+	$classes[] = 'singular';
+}
 
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-		$classes[] = 'slider';
-	} elseif ( is_front_page() ) {
-		$classes[] = 'grid';
-	}
+if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
+	$classes[] = 'slider';
+} elseif ( is_front_page() ) {
+	$classes[] = 'grid';
+}
 
-	return $classes;
+return $classes;
 }
 add_filter( 'body_class', 'twentyfourteen_body_classes' );
 
@@ -512,4 +512,22 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
+}
+
+function show_all_thumbs() {
+	global $post;
+	$post = get_post($post);
+	$thumb_ID = get_post_thumbnail_id( $post->ID );
+	/* image code */
+	$images =& get_children( 'post_type=attachment&post_mime_type=image&output=ARRAY_N&orderby=menu_order&order=ASC&exclude'.$thumb_ID.'=ASC&post_parent='.$post->ID);
+	if($images){
+		foreach( $images as $imageID => $imagePost ){
+
+			unset($the_b_img);
+			$the_b_img = wp_get_attachment_image($imageID, 'thumbnail', false);
+			$thumblist .= '<a href="'.get_attachment_link($imageID).'">'.$the_b_img.'</a>';
+
+		}
+	}
+	return $thumblist;
 }

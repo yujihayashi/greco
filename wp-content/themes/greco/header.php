@@ -28,6 +28,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/prettyPhoto/css/prettyPhoto.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/stylesheet.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/images/icon.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/site.css">

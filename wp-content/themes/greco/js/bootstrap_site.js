@@ -4,4 +4,7 @@ jQuery(document).ready(function () {
 	}, function () {
 		$(this).find('.conteudo').stop(true, true).delay(100).fadeOut({duration: 800, queue: true, easing: 'easeInOutExpo'});
 	});
+
+	$('.ver-imagem').prettyPhoto();
+$('a[rel^="prettyPhoto"]').prettyPhoto();
 });
