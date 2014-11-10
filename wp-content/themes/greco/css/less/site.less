@@ -73,7 +73,8 @@ ESTRUTURA START
         }
         .header-social {
             float: right;padding:10px 20px;
-            a {display: inline-block;margin-left: 8px;}
+            ul {padding-left:0;list-style: none;}
+            a, ul li {display: inline-block;margin-left: 8px;}
         }
     }
 }
@@ -286,14 +287,33 @@ JQUERY UI END
 
 }
 @media (max-width: 767px) {
- /*    .site-geral:before {content:"TABLET";}*/
+   /*    .site-geral:before {content:"TABLET";}*/
+   .navbar-form {
+    border:0;box-shadow:none;
+    .button {top:8px !important;}
+   }
+   .box-banner {
+    width: 100%;
+    .cycle-slideshow, .cycle-slideshow li {height: auto;}
+    li {
+        img {width: 100%;height: auto;}
+    }
+}
+.box-chamadas {
+    > div {margin-bottom: 20px;}
+}
 }
 @media (max-width: 480px) {
- /*#GERAL:before {content:"MOBILE";}*/
+   /*#GERAL:before {content:"MOBILE";}*/
+   .extra-header {
+        .site-header {
+           .header-social {display: none;}
+       }
+    }
 }
 @media (min-width: 768px) and (max-width: 980px) {
 
 }
 @media (min-width: 981px) and (max-width: 1200px) {
- /*#GERAL:before {content:"ACIMA DE TABLET";}*/
+   /*#GERAL:before {content:"ACIMA DE TABLET";}*/
 }

@@ -50,12 +50,6 @@
 			<div class="site-header">
 				<div class="line-1 clearfix">
 					<div class="container-fluid">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-principal">
-							<span class="sr-only">Navegação</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
 						<form class="navbar-form navbar-right" action="<?= get_home_url(); ?>" method="get" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control input-sm" placeholder="Pesquise" name="s" value="<?php echo get_search_query(); ?>" id="s">
@@ -63,15 +57,32 @@
 							<button type="submit" class="button"><span class="icon-mag"></span><span class="sr-only">Pesquisar</span></button>
 						</form>
 						<div class="header-social">
-							<a href="#" target="_blank" title="Acesse nosso Facebook"><span class="icon-facebook"></span><span class="sr-only">Facebook</span></a>
-							<a href="#" target="_blank" title="Acesse nosso Instagram"><span class="icon-instagram"></span><span class="sr-only">Instagram</span></a>
-							<a href="#" target="_blank" title="Acesse nosso Twitter"><span class="icon-twitter"></span><span class="sr-only">Twitter</span></a>
+							<ul>
+						<?php $args = array(
+							'orderby'          => 'rating',
+							'category_name'    => 'social',
+							'categorize'       => 0,
+							'title_li'         => '',
+							'category_orderby' => 'name',
+							'category_order'   => 'ASC',
+							'class'            => 'linkcat',
+							'category_before'  => '<div>',
+							'show_name'		=> false,
+							'category_after'   => '</div>'); ?> 
+							<?php wp_list_bookmarks($args); ?>
+							</ul>
 						</div> <!-- .header-social -->
 					</div> <!-- .container-fluid -->
 				</div> <!-- .line-1 -->
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container">
 						<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-principal">
+							<span class="sr-only">Navegação</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 							<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Ir para a página inicial"><img src="<?php echo get_template_directory_uri(); ?>/images/greco-forma.png" alt="Logotipo <?php bloginfo( 'name' ); ?>"></a>
 						</div>
 						<div class="collapse navbar-collapse menu-principal">

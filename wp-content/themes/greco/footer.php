@@ -23,7 +23,7 @@
 						<ul>
 						<?php $args = array(
 							'orderby'          => 'rating',
-							'category_name'    => 'redes-sociais',
+							'category_name'    => 'social',
 							'categorize'       => 0,
 							'title_li'         => '',
 							'category_orderby' => 'name',
@@ -34,9 +34,6 @@
 							'category_after'   => '</div>'); ?> 
 							<?php wp_list_bookmarks($args); ?>
 							</ul>
-						<a href="#" target="_blank" title="Acesse nosso Facebook"><span class="icon-facebook"></span><span class="sr-only">Facebook</span></a>
-						<a href="#" target="_blank" title="Acesse nosso Instagram"><span class="icon-instagram"></span><span class="sr-only">Instagram</span></a>
-						<a href="#" target="_blank" title="Acesse nosso Twitter"><span class="icon-twitter"></span><span class="sr-only">Twitter</span></a>
 					</div> <!-- .footer-social -->
 				</div> <!-- .col-md-4 -->
 				<div class="col-md-5">
@@ -56,9 +53,6 @@
 							'category_after'   => '</div>'); ?> 
 							<?php wp_list_bookmarks($args); ?>
 							</ul>
-							<a href="http://www.grancarbelem.com.br/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/parceiros/gran-car.png" alt="Logotipo Gran Car"></a>
-							<a href="http://www.righetto.com.br/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/parceiros/riguetto.png" alt="Logotipo Riguetto"></a>
-							<a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/parceiros/festa-belem.png" alt="Logotipo Festa Belém"></a>
 						</div> <!-- .box-parceiros -->
 					</div> <!-- .col-md-5 -->
 					<div class="col-md-3 text-center">
