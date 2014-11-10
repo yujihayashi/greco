@@ -52,7 +52,7 @@ get_header(); ?>
 									<span class="pull-left"><span class="icon-hora"></span></span>
 									<div class="media-body">
 										<h2 class="media-heading">Veja nossos<br> horários</h2>
-										<a href="#">Saiba mais >></a>
+										<a href="/pagina/horarios/">Saiba mais >></a>
 									</div> <!-- .media-body -->
 								</div> <!-- .media -->
 							</div> <!-- .col-md-3 -->
@@ -61,7 +61,7 @@ get_header(); ?>
 									<span class="pull-left"><span class="icon-musculacao"></span></span>
 									<div class="media-body">
 										<h2 class="media-heading">Nossas modalidades</h2>
-										<a href="#">Saiba mais >></a>
+										<a href="/pagina/modalidades">Saiba mais >></a>
 									</div> <!-- .media-body -->
 								</div> <!-- .media -->
 							</div> <!-- .col-md-3 -->
@@ -70,7 +70,7 @@ get_header(); ?>
 									<span class="pull-left"><span class="icon-marker"></span></span>
 									<div class="media-body">
 										<h2 class="media-heading">Onde<br> fica?</h2>
-										<a href="#">Saiba mais >></a>
+										<a href="/pagina/unidades/">Saiba mais >></a>
 									</div> <!-- .media-body -->
 								</div> <!-- .media -->
 							</div> <!-- .col-md-2 -->
@@ -82,30 +82,26 @@ get_header(); ?>
 						<h2 class="sr-only">Modalidades</h2>
 						<div class="box-cycle">
 							<ul class="cycle-slideshow" data-cycle-fx="carousel" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-next=".box-modalidades .cycle-next" data-cycle-prev=".box-modalidades .cycle-prev" data-cycle-easing="easeInOutExpo" data-cycle-log="false">
+								<?
+								global $post;
+								$args = array( 'numberposts' => 0, 'category_name' => 'modalidades' );
+								$posts = get_posts( $args );
+								foreach( $posts as $post ): setup_postdata($post); 
+
+								?>
 								<li>
 									<div class="media clearfix">
-										<span class="pull-left"><img src="<?php echo get_template_directory_uri(); ?>/images/boxe.jpg" alt=""></span>
+										<span class="pull-left imagem"><?php the_post_thumbnail(); ?></span>
 										<div class="media-body">
-											<h3 class="media-heading">Boxe</h3>
-											<p>
-												Uma aula estimulante e nada monótona, assim é a aula de boxe recreat...
-											</p>
+											<h3 class="media-heading"><?php the_title(); ?></h3>
+											<?php echo substr(get_the_excerpt(),0,120); ?> [...]
 										</div>
 									</div> <!-- .media -->
-									<a href="#" class="plus">Saiba mais >></a>
+									<a href="<?php the_permalink(); ?>" class="plus">Saiba mais >></a>
 								</li>
-								<li>
-									<div class="media clearfix">
-										<span class="pull-left"><img src="<?php echo get_template_directory_uri(); ?>/images/ritmos.jpg" alt=""></span>
-										<div class="media-body">
-											<h3 class="media-heading">Ritmos</h3>
-											<p>
-												Nessa aula, é possível perder muitas calorias com ritmos, que v&atil...
-											</p>
-										</div>
-									</div> <!-- .media -->
-									<a href="#" class="plus">Saiba mais >></a>
-								</li>
+								<?php
+								endforeach; 
+								?>
 							</ul>
 							<a href="javascript:void(0);" class="cycle-prev"><span class="icon-arrow-left"></span></a>
 							<a href="javascript:void(0);" class="cycle-next"><span class="icon-arrow-right"></span></a>

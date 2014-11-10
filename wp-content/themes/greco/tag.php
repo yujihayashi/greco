@@ -15,11 +15,11 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
+<div class="container">
 			<?php if ( have_posts() ) : ?>
 
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'twentyfourteen' ), single_tag_title( '', false ) ); ?></h1>
+				<h1 class="archive-title"><?php printf( single_tag_title( '', false ) ); ?></h1>
 
 				<?php
 					// Show an optional term description.
@@ -51,6 +51,7 @@ get_header(); ?>
 
 				endif;
 			?>
+</div> <!-- .container -->
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
