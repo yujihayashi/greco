@@ -531,3 +531,16 @@ function show_all_thumbs() {
 	}
 	return $thumblist;
 }
+
+if (function_exists('register_sidebar')) {
+
+        register_sidebar(array(
+            'name' => 'Topo',
+            'id' => 'header_left',
+            'description' => 'Player do topo',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>'
+        ));
+    }

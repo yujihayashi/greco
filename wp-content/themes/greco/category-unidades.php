@@ -39,7 +39,7 @@ get_header(); ?>
 
 				$posttags = get_the_tags();
 				if ( ! empty( $posttags ) ) {
-					print '<ul class="tags">';
+					print '<ul class="tags clearfix">';
 					foreach($posttags as $tag) {
 						// print 'key = ' . $tag->slug;
 						$url = get_the_icon($args, $term_type = 'post_tag',$id = null, $use_term_id = $tag->term_id);
@@ -53,7 +53,7 @@ get_header(); ?>
 
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 col-xs-offset-2">
+						<div class="col-md-4 col-md-offset-2">
 							<div class="imagens">
 								<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
 								<a href="<?php echo $large_image_url[0]; ?>" class="destaque" rel="prettyPhoto[unidade-<?php echo get_the_ID(); ?>]" title="<?php echo the_title_attribute( 'echo=0' ); ?>">
@@ -133,9 +133,13 @@ jQuery(document).ready(function () {
 	$('.box-tabs .nav-tabs li:first-child').addClass('active');
 
 	$('.tags > li').hover(function () {
+		if ($(window).width() >= 981) {
 		$(this).find('.title').stop(true, true).delay(100).show({duration: 400, queue: true, easing: 'easeInOutExpo'});
+		}
 	}, function () {
+		if ($(window).width() >= 981) {
 		$(this).find('.title').stop(true, true).delay(100).hide({duration: 400, queue: true, easing: 'easeInOutExpo'});
+		}
 	});
 });
 </script>

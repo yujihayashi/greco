@@ -55,6 +55,7 @@ FONTS START
   font-family: 'akzidenz-grotesk_nextXLtIt', Arial, sans-serif;
   font-weight: normal;
 }
+.box-social .box-header,
 .box-modalidades .plus,
 .box-chamadas,
 .box-chamadas .media-heading,
@@ -124,6 +125,7 @@ ESTRUTURA START
 }
 .extra-header .site-header .header-social ul {
   padding-left: 0;
+  margin: 0;
   list-style: none;
 }
 .extra-header .site-header .header-social a,
@@ -429,6 +431,31 @@ CLASSES START
   border: 0;
   color: #580808;
 }
+.box-social {
+  margin-bottom: 30px;
+}
+.box-social .box-header {
+  width: 162px;
+  padding: 12px 15px;
+  background: #F7F7F7;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #FFF;
+}
+.box-social .box-content {
+  padding: 12px 15px;
+  background: #FFF;
+  height: 276px;
+}
+.box-social.box-social-facebook .box-header {
+  background-color: #4867a8;
+}
+.box-social.box-social-twitter .box-header {
+  background-color: #019fee;
+}
+.box-social.box-social-instagram .box-header {
+  background-color: #924924;
+}
 .entry-content:before,
 .entry-content:after {
   display: table;
@@ -651,14 +678,82 @@ JQUERY UI START
 /**********************************************************************************************
 JQUERY UI END
 */
+@media (max-width: 981px) {
+  .extra-header .site-header .navbar-brand {
+    padding: 24px 10px;
+  }
+  .extra-header .site-header .navbar-brand img {
+    width: 180px;
+  }
+  .extra-header .site-header .navbar-nav {
+    font-size: 13px;
+  }
+  .extra-header .site-header .navbar-nav > li > a {
+    padding: 29.5px 7px;
+  }
+  .extra-header .site-header .navbar-nav > li .icone {
+    display: none;
+  }
+  .tags {
+    position: relative;
+    padding: 15px 10px;
+    width: 100%;
+  }
+  .tags > li {
+    padding: 0;
+    clear: none;
+  }
+  .tags > li + li {
+    margin-left: 10px;
+  }
+  .tags > li img {
+    position: relative;
+  }
+}
 @media (max-width: 767px) {
   /*    .site-geral:before {content:"TABLET";}*/
+  .box-modalidades .box-cycle,
+  .box-modalidades .cycle-slideshow {
+    width: 100%;
+  }
+  .box-modalidades .box-cycle {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+  .box-modalidades .cycle-prev {
+    left: 0;
+  }
+  .box-modalidades .cycle-next {
+    right: 0;
+  }
+  .extra-header .site-header .navbar-brand {
+    padding: 24px 10px;
+  }
+  .extra-header .site-header .navbar-brand img {
+    width: 180px;
+  }
+  .extra-header .site-header .navbar-nav {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  .extra-header .site-header .navbar-nav > li > a {
+    padding: 10px 15px;
+  }
+  .extra-header .site-header .navbar-nav > li .icone {
+    display: none;
+  }
   .navbar-form {
     border: 0;
     box-shadow: none;
   }
   .navbar-form .button {
     top: 8px !important;
+  }
+  .box-tabs .nav-tabs {
+    font-size: 12px;
+  }
+  .box-tabs .nav-tabs > li > a {
+    padding: 30px 25px;
   }
   .box-banner {
     width: 100%;
@@ -677,10 +772,77 @@ JQUERY UI END
 }
 @media (max-width: 480px) {
   /*#GERAL:before {content:"MOBILE";}*/
+  .box-modalidades .cycle-slideshow li {
+    width: 200px;
+  }
+  .box-modalidades .box-cycle img {
+    width: 100%;
+    height: auto;
+  }
+  .box-modalidades .media > .pull-left {
+    display: block;
+    float: none !important;
+  }
+  .box-modalidades .media .media-body {
+    padding-top: 10px;
+  }
   .extra-header .site-header .header-social {
     display: none;
   }
+  .box-tabs .nav-tabs {
+    font-size: 10px;
+  }
+  .box-tabs .nav-tabs > li > a {
+    padding: 15px 8px;
+  }
+  .page-modalidades {
+    padding: 0 44px;
+  }
+  .page-modalidades .cycle-prev,
+  .page-modalidades .cycle-next {
+    width: 44px;
+  }
+  .page-modalidades .cycle-slideshow li {
+    width: 230px;
+  }
+}
+@media (min-width: 768px) and (max-width: 980px) {
+  .box-banner {
+    width: 100%;
+  }
+  .box-banner .cycle-slideshow,
+  .box-banner .cycle-slideshow li {
+    height: auto;
+  }
+  .box-banner li img {
+    width: 100%;
+    height: auto;
+  }
+  .box-modalidades .box-cycle,
+  .box-modalidades .cycle-slideshow {
+    width: 100%;
+  }
+  .box-tabs .nav-tabs > li > a {
+    padding: 30px 30px;
+  }
 }
 @media (min-width: 981px) and (max-width: 1200px) {
-  /*#GERAL:before {content:"ACIMA DE TABLET";}*/
+  .box-tabs .nav-tabs > li > a {
+    padding: 30px 30px;
+  }
+  .extra-header .site-header .navbar-brand {
+    padding: 24px 10px;
+  }
+  .extra-header .site-header .navbar-brand img {
+    width: 180px;
+  }
+  .extra-header .site-header .navbar-nav {
+    font-size: 15px;
+  }
+  .extra-header .site-header .navbar-nav > li > a {
+    padding: 29.5px 7px;
+  }
+  .extra-header .site-header .navbar-nav > li .icone {
+    margin-left: 4px;
+  }
 }

@@ -48,7 +48,7 @@ FONTS START
 **********************************************************************************************/
 .btn {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
 .page-modalidades .title, .page-modalidades .desc {font-family: 'akzidenz-grotesk_nextXLtIt', Arial, sans-serif;font-weight: normal;}
-.box-modalidades .plus, .box-chamadas, .box-chamadas .media-heading, .navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
+.box-social .box-header, .box-modalidades .plus, .box-chamadas, .box-chamadas .media-heading, .navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
 .box-modalidades {font-family: 'akzidenz-grotesk_next_regulRg', Arial, sans-serif;font-weight: normal;}
 .box-modalidades .media-heading {font-family: 'akzidenz-grotesk_bq_superRg', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
@@ -73,7 +73,7 @@ ESTRUTURA START
         }
         .header-social {
             float: right;padding:10px 20px;
-            ul {padding-left:0;list-style: none;}
+            ul {padding-left:0;margin:0;list-style: none;}
             a, ul li {display: inline-block;margin-left: 8px;}
         }
     }
@@ -195,6 +195,20 @@ CLASSES START
         }
     } 
 }
+.box-social {
+    margin-bottom: 30px;
+    .box-header {width: 162px;padding:12px 15px;background: #F7F7F7;font-size: 17px;text-transform: uppercase;color: #FFF;}
+    .box-content {padding:12px 15px;background: #FFF;height: 276px;}
+    &.box-social-facebook {
+        .box-header {background-color: #4867a8;}
+    }
+    &.box-social-twitter {
+        .box-header {background-color: #019fee;}
+    }
+    &.box-social-instagram {
+        .box-header {background-color: #924924;}
+    }
+}
 
 .entry-content:before, .entry-content:after {display: table;content: " ";}
 .entry-content:after {clear: both;}
@@ -286,34 +300,160 @@ JQUERY UI END
 @media print {
 
 }
-@media (max-width: 767px) {
-   /*    .site-geral:before {content:"TABLET";}*/
-   .navbar-form {
-    border:0;box-shadow:none;
-    .button {top:8px !important;}
-   }
-   .box-banner {
-    width: 100%;
-    .cycle-slideshow, .cycle-slideshow li {height: auto;}
-    li {
-        img {width: 100%;height: auto;}
+@media (max-width: 981px) {
+    .extra-header {
+        .site-header {
+            .navbar-brand {
+                padding:24px 10px;
+                img {width: 180px;}
+            }
+            .navbar-nav {
+                font-size: 13px;
+                > li {
+                    > a {padding:29.5px 7px;}
+                    .icone {display: none;}
+                }
+            }
+        }
+    }
+    .tags {
+        position: relative;padding: 15px 10px;width: 100%;
+        > li {
+           padding:0;clear: none;
+            + li {margin-left: 10px;}
+            img {position: relative;}
+        }
     }
 }
-.box-chamadas {
-    > div {margin-bottom: 20px;}
-}
+@media (max-width: 767px) {
+ /*    .site-geral:before {content:"TABLET";}*/
+    .box-modalidades {
+        .box-cycle, .cycle-slideshow {width: 100%;}
+        .box-cycle {
+            padding-left:46px;padding-right: 46px;
+        }
+        .cycle-prev {left: 0;}
+        .cycle-next {right: 0;}
+    }
+    .extra-header {
+        .site-header {
+            .navbar-brand {
+                padding:24px 10px;
+                img {width: 180px;}
+            }
+            .navbar-nav {
+                font-size: 16px;margin-top:0;
+                > li {
+                    > a {padding:10px 15px;}
+                    .icone {display: none;}
+                }
+            }
+        }
+    }
+    .navbar-form {
+        border:0;box-shadow:none;
+        .button {top:8px !important;}
+    }
+    .box-tabs {
+        .nav-tabs {
+            font-size: 12px;
+            > li {
+                > a {
+                    padding:30px 25px;
+                }
+            }
+        } 
+    }
+    .box-banner {
+        width: 100%;
+        .cycle-slideshow, .cycle-slideshow li {height: auto;}
+        li {
+            img {width: 100%;height: auto;}
+        }
+    }
+    .box-chamadas {
+        > div {margin-bottom: 20px;}
+    }
 }
 @media (max-width: 480px) {
-   /*#GERAL:before {content:"MOBILE";}*/
-   .extra-header {
+ /*#GERAL:before {content:"MOBILE";}*/
+    .box-modalidades {
+        .cycle-slideshow li {width: 200px;}
+        .box-cycle {
+            img {width: 100%;height:auto;}
+        }
+        .media {
+            > .pull-left {display: block;float: none !important;}
+            .media-body {padding-top:10px;}
+        }
+    }
+    .extra-header {
         .site-header {
-           .header-social {display: none;}
-       }
+         .header-social {display: none;}
+     }
+    }
+    .box-tabs {
+        .nav-tabs {
+            font-size: 10px;
+            > li {
+                > a {
+                    padding:15px 8px;
+                }
+            }
+        } 
+    }
+    .page-modalidades {
+        padding:0 44px;
+        .cycle-prev, .cycle-next {width: 44px;}
+        .cycle-slideshow {
+            li {width: 230px;}
+        }
     }
 }
 @media (min-width: 768px) and (max-width: 980px) {
-
+    .box-banner {
+        width: 100%;
+        .cycle-slideshow, .cycle-slideshow li {height: auto;}
+        li {
+            img {width: 100%;height: auto;}
+        }
+    }
+    .box-modalidades {
+        .box-cycle, .cycle-slideshow {width: 100%;}
+    }
+    .box-tabs {
+        .nav-tabs {
+            > li {
+                > a {
+                    padding:30px 30px;
+                }
+            }
+        } 
+    }
 }
 @media (min-width: 981px) and (max-width: 1200px) {
-   /*#GERAL:before {content:"ACIMA DE TABLET";}*/
+    .box-tabs {
+        .nav-tabs {
+            > li {
+                > a {
+                    padding:30px 30px;
+                }
+            }
+        } 
+    }
+    .extra-header {
+        .site-header {
+            .navbar-brand {
+                padding:24px 10px;
+                img {width: 180px;}
+            }
+            .navbar-nav {
+                font-size: 15px;
+                > li {
+                    > a {padding:29.5px 7px;}
+                    .icone {margin-left:4px;}
+                }
+            }
+        }
+    }
 }

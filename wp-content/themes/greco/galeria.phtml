@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="row" style="margin-top: 30px; border:none;">
+        <img class="img-responsive" style="margin:0 auto;" src="/imagem/site/headers/galeria.png" alt="header cardapio"/>
+    </div>  <!-- ./header -->
+</div>
+<div class="row" style="width: 600px;">
+    <h4>Fotos <small class="text-muted">(clique para visualizar no Instagram)</small></h4>
+    <ul id="instagram"></ul>
+</div>
+<!--  page footer -->
+<div class="row">
+    <div class="row" style="margin-top: 30px; border:none;">
+        <img class="img-responsive" style="margin:0 auto;"src="/imagem/site/headers/footer.png" alt="footer noticia"/>
+    </div> <!-- ./page footer -->
+</div>
+
+
+<div class="row">
+    <div class="row" style="border:none;">
+        <img class=" col-centered img-responsive" style="margin:0 auto;" src="/imagem/site/footer/parte_quadro.png" alt="footer noticia"/>
+    </div>
+</div>
+<script>
+
+    var accessToken = '470888444.5b9e1e6.5d1da2fccd584f4d804eed7a05651255';
+    var username = "maricotinha_casa";
+    var limit = 12; //Limite máximo de fotos
+    var setSize = "small";
+
+    var instagram = function() {
+        return {
+            init: function() {
+                instagram.getUser();
+            },
+            getUser: function() {
+                var getUserURL = 'https://api.instagram.com/v1/users/search?q=' + username + '&access_token=' + accessToken + '';
+                $.ajax({
+                    type: "GET",
+                    dataType: "jsonp",
+                    cache: false,
+                    url: getUserURL,
+                    success: function(data) {
+                        var getUserID = data.data[0].id;
+                        instagram.loadImages('470888444');
+                    }
+                });
+            },
+            loadImages: function(userID) {
+                var getImagesURL = 'https://api.instagram.com/v1/users/' + userID + '/media/recent/?access_token=' + accessToken + '';
+                $.ajax({
+                    type: "GET",
+                    dataType: "jsonp",
+                    cache: false,
+                    url: getImagesURL,
+                    success: function(data) {
+                        for (var i = 0; i < limit; i += 1) {
+                            if (setSize == "small") {
+                                var size = data.data[i].images.thumbnail.url;
+                            } else if (setSize == "medium") {
+                                var size = data.data[i].images.low_resolution.url;
+                            } else {
+                                var size = data.data[i].images.standard_resolution.url;
+                            }
+                            $("#instagram").append("<li><a target='_blank' href='" + data.data[i].link + "'><img src='" + size + "'/></a>");
+                        }
+                    }
+                });
+            }
+        };
+    }();
+    $(function() {   
+        instagram.init();
+    });
+</script>
