@@ -27,18 +27,17 @@ get_header(); ?>
 				<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
-
-					// Include the page content template.
-				get_template_part( 'content', 'page' );
-
-					// If comments are open or we have at least one comment, load up the comment template.
-				/*if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}*/
-				endwhile;
 				?>
+
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header>
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-4">
+						<?php the_content(); ?>
+						
+					</div> <!-- .col-md-3 -->
+					<div class="col-md-3 col-md-offset-1">
 						<div class="box-social box-social-facebook">
 							<div class="box-header">
 								Facebook
@@ -67,40 +66,35 @@ get_header(); ?>
 							</div> <!-- .box-content -->
 						</div> <!-- .box-social -->
 					</div> <!-- .col-md-3 -->
-					<div class="col-md-3 col-md-offset-1">
-						<div class="box-social box-social-instagram">
-							<div class="box-header">
-								Instagram
-							</div> <!-- .box-header -->
-							<div class="box-content">
-
-							</div> <!-- .box-content -->
-						</div> <!-- .box-social -->
-					</div> <!-- .col-md-3 -->
 				</div> <!-- .row -->
+				<?php
+				endwhile;
+				?>
 			</div> <!-- .container -->
+			<? /*
 			<div class="page-contato">
 				<div class="container-fluid">
-					<h2 class="text-center">O QUE VOCÊ DESEJA?</h2>
+					<h2 class="text-center media-heading">O QUE VOCÊ DESEJA?</h2>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-1">
-							<a href="#" class="btn btn-primary btn-lg btn-block">Dúvidas</a>
+							<a href="#ninja-forms-modal-2" rel="nf-modal:open" class="nf-modal-link btn btn-primary btn-lg btn-block pwebcontact1_toggler">Dúvidas</a>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-2">
-							<a href="#" class="btn btn-primary btn-lg btn-block">Dúvidas</a>
+							<a href="#ninja-forms-modal-3" rel="nf-modal:open" class="nf-modal-link btn btn-primary btn-lg btn-block">Parceria</a>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-2">
-							<a href="#" class="btn btn-primary btn-lg btn-block">Dúvidas</a>
+							<a href="#ninja-forms-modal-4" rel="nf-modal:open" class="nf-modal-link btn btn-primary btn-lg btn-block">Marketing</a>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-2">
-							<a href="#" class="btn btn-primary btn-lg btn-block">Dúvidas</a>
+							<a href="#ninja-forms-modal-5" rel="nf-modal:open" class="nf-modal-link btn btn-primary btn-lg btn-block">Reclamações</a>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-2">
-							<a href="#" class="btn btn-primary btn-lg btn-block">Dúvidas</a>
+							<a href="#ninja-forms-modal-6" rel="nf-modal:open" class="nf-modal-link btn btn-primary btn-lg btn-block">Fazer parte da equipe</a>
 						</div> <!-- .col-md-2 -->
 					</div> <!-- .row -->
 				</div> <!-- .container-fluid -->
 			</div> <!-- .page-contato -->
+			*/ ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 	<?php get_sidebar( 'content' ); ?>

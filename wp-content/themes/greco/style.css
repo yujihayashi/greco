@@ -261,6 +261,20 @@ CLASSES START
   display: block;
   margin: 0 auto;
 }
+.btn-block.btn-lg {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #6f1d1c;
+  border: 0;
+}
+.btn-block.btn-lg:hover {
+  background-color: #982826;
+}
 .box-banner {
   position: relative;
   width: 850px;
@@ -613,6 +627,15 @@ CLASSES START
 }
 .page-horarios .nav-pills {
   margin-top: 20px;
+}
+.page-contato {
+  background: #ed3237;
+  margin-top: 150px;
+  padding-bottom: 40px;
+}
+.page-contato .media-heading {
+  margin-top: -65px;
+  font-size: 35px;
 }
 .page-header {
   border: 0;
