@@ -26,6 +26,7 @@ get_header(); ?>
 					printf( '<div class="taxonomy-description">%s</div>', $term_description );
 				endif;
 				?>
+				<p class="text-center">Clique em uma das unidades ao lado.</p>
 			</header><!-- .archive-header -->
 
 		</div> <!-- .container -->

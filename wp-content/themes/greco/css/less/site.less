@@ -59,7 +59,7 @@ ESTRUTURA START
 **********************************************************************************************/
 .extra-header {
     .site-header {
-        .line-1 {background: @primary-color;}
+        .line-1 {background: @primary-color;display: none;}
         .navbar-brand {padding:18px 10px;}
         .navbar {
             text-transform: uppercase;font-size: 16px;border:0;margin:0;
@@ -77,6 +77,11 @@ ESTRUTURA START
             a, ul li {display: inline-block;margin-left: 8px;}
         }
     }
+}
+.form-sidebar {
+    position: relative;margin:11.5px 0;
+    .form-control {-webkit-border-radius: 50px;-moz-border-radius: 50px;-ms-border-radius: 50px;-o-border-radius: 50px;border-radius: 50px;border:0;z-index: 1;height: 26px;width: 100%;}
+    .button {position: absolute;right: 10px;top: 0;z-index: 2;background: none;border:0;padding:1px 8px;}
 }
 .site-content {min-height: 300px;}
 .extra-footer {
@@ -119,6 +124,18 @@ ESTRUTURA START
     .site-main {
         .entry-header {text-align: left;text-transform: none;}
     }
+}
+.site-main {
+    .widget-area {
+        .widget {color: #000;}
+    }
+}
+.widget-area {
+    .widget {
+        background: #FFF;
+        > ul {padding-bottom: 10px;padding-left: 30px;}
+    }
+    .widget-title {font-size: 19px;line-height: 1;color: #FFF;background: @primary-color;padding:10px 20px;}
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -200,7 +217,7 @@ CLASSES START
 .box-social {
     margin-bottom: 30px;
     .box-header {width: 162px;padding:12px 15px;background: #F7F7F7;font-size: 17px;text-transform: uppercase;color: #FFF;}
-    .box-content {padding:12px 15px;background: #FFF;height: 276px;}
+    .box-content {padding:25px;background: #FFF;height: 276px;}
     &.box-social-facebook {
         .box-header {background-color: #4867a8;}
     }
@@ -247,7 +264,7 @@ CLASSES START
 }
 
 .page-modalidades {
-    padding:0 70px;position: relative;overflow: hidden;
+    padding:0 70px;position: relative;overflow: hidden;margin-bottom: 40px;
     &, .cycle-slideshow, .cycle-slideshow li, .cycle-content, .imagem {height: 334px;}
     .cycle-slideshow {
         width: 100%;
@@ -279,7 +296,14 @@ CLASSES START
 .page-header {border:0;padding:0;}
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
 .relative {position: relative;}
+.subcategorias {
+    font-size: 16px;margin:20px 0;
+    a {
+        display: inline-block;padding:0px 10px;color: #FFF;
+        + a {border-left: 1px solid #FFF;}
+    }
 
+}
 .tags {
     list-style: none;position: absolute;left: 0;top: 0;font-size: 18px;padding-left: 30px;width: 46px;
     > li, .title {height: 44px;}
@@ -325,96 +349,96 @@ JQUERY UI END
     .tags {
         position: relative;padding: 15px 10px;width: 100%;
         > li {
-           padding:0;clear: none;
-            + li {margin-left: 10px;}
-            img {position: relative;}
-        }
-    }
+         padding:0;clear: none;
+         + li {margin-left: 10px;}
+         img {position: relative;}
+     }
+ }
 }
 @media (max-width: 767px) {
- /*    .site-geral:before {content:"TABLET";}*/
-    .box-modalidades {
-        .box-cycle, .cycle-slideshow {width: 100%;}
-        .box-cycle {
-            padding-left:46px;padding-right: 46px;
+   /*    .site-geral:before {content:"TABLET";}*/
+   .box-modalidades {
+    .box-cycle, .cycle-slideshow {width: 100%;}
+    .box-cycle {
+        padding-left:46px;padding-right: 46px;
+    }
+    .cycle-prev {left: 0;}
+    .cycle-next {right: 0;}
+}
+.extra-header {
+    .site-header {
+        .navbar-brand {
+            padding:24px 10px;
+            img {width: 180px;}
         }
-        .cycle-prev {left: 0;}
-        .cycle-next {right: 0;}
-    }
-    .extra-header {
-        .site-header {
-            .navbar-brand {
-                padding:24px 10px;
-                img {width: 180px;}
-            }
-            .navbar-nav {
-                font-size: 16px;margin-top:0;
-                > li {
-                    > a {padding:10px 15px;}
-                    .icone {display: none;}
-                }
-            }
-        }
-    }
-    .navbar-form {
-        border:0;box-shadow:none;
-        .button {top:8px !important;}
-    }
-    .box-tabs {
-        .nav-tabs {
-            font-size: 12px;
+        .navbar-nav {
+            font-size: 16px;margin-top:0;
             > li {
-                > a {
-                    padding:30px 25px;
-                }
+                > a {padding:10px 15px;}
+                .icone {display: none;}
             }
-        } 
-    }
-    .box-banner {
-        width: 100%;
-        .cycle-slideshow, .cycle-slideshow li {height: auto;}
-        li {
-            img {width: 100%;height: auto;}
         }
-    }
-    .box-chamadas {
-        > div {margin-bottom: 20px;}
     }
 }
-@media (max-width: 480px) {
- /*#GERAL:before {content:"MOBILE";}*/
-    .box-modalidades {
-        .cycle-slideshow li {width: 200px;}
-        .box-cycle {
-            img {width: 100%;height:auto;}
-        }
-        .media {
-            > .pull-left {display: block;float: none !important;}
-            .media-body {padding-top:10px;}
-        }
-    }
-    .extra-header {
-        .site-header {
-         .header-social {display: none;}
-     }
-    }
-    .box-tabs {
-        .nav-tabs {
-            font-size: 10px;
-            > li {
-                > a {
-                    padding:15px 8px;
-                }
+.navbar-form {
+    border:0;box-shadow:none;
+    .button {top:8px !important;}
+}
+.box-tabs {
+    .nav-tabs {
+        font-size: 12px;
+        > li {
+            > a {
+                padding:30px 25px;
             }
-        } 
-    }
-    .page-modalidades {
-        padding:0 44px;
-        .cycle-prev, .cycle-next {width: 44px;}
-        .cycle-slideshow {
-            li {width: 230px;}
         }
+    } 
+}
+.box-banner {
+    width: 100%;
+    .cycle-slideshow, .cycle-slideshow li {height: auto;}
+    li {
+        img {width: 100%;height: auto;}
     }
+}
+.box-chamadas {
+    > div {margin-bottom: 20px;}
+}
+}
+@media (max-width: 480px) {
+   /*#GERAL:before {content:"MOBILE";}*/
+   .box-modalidades {
+    .cycle-slideshow li {width: 200px;}
+    .box-cycle {
+        img {width: 100%;height:auto;}
+    }
+    .media {
+        > .pull-left {display: block;float: none !important;}
+        .media-body {padding-top:10px;}
+    }
+}
+.extra-header {
+    .site-header {
+       .header-social {display: none;}
+   }
+}
+.box-tabs {
+    .nav-tabs {
+        font-size: 10px;
+        > li {
+            > a {
+                padding:15px 8px;
+            }
+        }
+    } 
+}
+.page-modalidades {
+    padding:0 44px;
+    .cycle-prev, .cycle-next {width: 44px;}
+    .cycle-slideshow {
+        li {width: 230px;}
+    }
+}
 }
 @media (min-width: 768px) and (max-width: 980px) {
     .box-banner {

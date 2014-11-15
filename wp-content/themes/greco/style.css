@@ -79,6 +79,7 @@ ESTRUTURA START
 **********************************************************************************************/
 .extra-header .site-header .line-1 {
   background: #ed3237;
+  display: none;
 }
 .extra-header .site-header .navbar-brand {
   padding: 18px 10px;
@@ -132,6 +133,30 @@ ESTRUTURA START
 .extra-header .site-header .header-social ul li {
   display: inline-block;
   margin-left: 8px;
+}
+.form-sidebar {
+  position: relative;
+  margin: 11.5px 0;
+}
+.form-sidebar .form-control {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  border: 0;
+  z-index: 1;
+  height: 26px;
+  width: 100%;
+}
+.form-sidebar .button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 2;
+  background: none;
+  border: 0;
+  padding: 1px 8px;
 }
 .site-content {
   min-height: 300px;
@@ -231,6 +256,23 @@ ESTRUTURA START
 .category .site-main .entry-header {
   text-align: left;
   text-transform: none;
+}
+.site-main .widget-area .widget {
+  color: #000;
+}
+.widget-area .widget {
+  background: #FFF;
+}
+.widget-area .widget > ul {
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+.widget-area .widget-title {
+  font-size: 19px;
+  line-height: 1;
+  color: #FFF;
+  background: #ed3237;
+  padding: 10px 20px;
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -457,7 +499,7 @@ CLASSES START
   color: #FFF;
 }
 .box-social .box-content {
-  padding: 12px 15px;
+  padding: 25px;
   background: #FFF;
   height: 276px;
 }
@@ -552,6 +594,7 @@ CLASSES START
   padding: 0 70px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 40px;
 }
 .page-modalidades,
 .page-modalidades .cycle-slideshow,
@@ -649,6 +692,18 @@ CLASSES START
 }
 .relative {
   position: relative;
+}
+.subcategorias {
+  font-size: 16px;
+  margin: 20px 0;
+}
+.subcategorias a {
+  display: inline-block;
+  padding: 0px 10px;
+  color: #FFF;
+}
+.subcategorias a + a {
+  border-left: 1px solid #FFF;
 }
 .tags {
   list-style: none;

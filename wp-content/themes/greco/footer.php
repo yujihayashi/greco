@@ -57,7 +57,7 @@
 					</div> <!-- .col-md-5 -->
 					<div class="col-md-3 text-center">
 						<span class="footer-header footer-header-sm">Desenvolvido por:</span>
-						<a href="http://festabelem.com.br/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/1to1.png" alt="Logotipo 1to1"></a>
+						<a href="http://www.agencia1to1.com.br/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/1to1.png" alt="Logotipo 1to1"></a>
 					</div> <!-- .col-md-3 -->
 				</div> <!-- .row -->
 				<?php get_sidebar( 'footer' ); ?>
