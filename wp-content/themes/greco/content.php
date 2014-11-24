@@ -11,7 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php twentyfourteen_post_thumbnail(); ?>
+	<?//php twentyfourteen_post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php
@@ -26,8 +26,12 @@
 
 		<div class="entry-meta">
 			<?php
-				if ( 'post' == get_post_type() )
-					twentyfourteen_posted_on();
+				if ( 'post' == get_post_type() ) {
+
+					if ( is_single() && !in_category('modalidades')  ) :
+						twentyfourteen_posted_on();
+					endif;
+				}
 
 				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 			/*<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyfourteen' ), __( '1 Comment', 'twentyfourteen' ), __( '% Comments', 'twentyfourteen' ) ); ?></span>*/

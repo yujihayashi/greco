@@ -53,9 +53,6 @@
 			<div class="site-header">
 				<div class="line-1 clearfix">
 					<div class="container-fluid">
-						<div class="navbar-left">
-							<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('header_left')) : else : endif; ?>  
-						</div> <!-- .navbar-left -->
 						<form class="navbar-form navbar-right" action="<?= get_home_url(); ?>" method="get" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control input-sm" placeholder="Pesquise" name="s" value="<?php echo get_search_query(); ?>" id="s">
