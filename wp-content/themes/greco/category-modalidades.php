@@ -15,7 +15,13 @@ get_header(); ?>
 	<div id="content" class="site-content" role="main">
 		<div class="container">
 			<?php if ( have_posts() ) : ?>
+			<?
+			global $post;
+			$args = array( 'numberposts' => -1, 'category_name' => 'modalidades' );
+			$posts = get_posts( $args );
+			
 
+			?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( single_cat_title( '', false ) ); ?></h1>
 
@@ -29,7 +35,7 @@ get_header(); ?>
 			</header><!-- .archive-header -->
 			<div class="page-modalidades">
 				<ul class="cycle-slideshow" data-cycle-fx="carousel" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-next=".page-modalidades .cycle-next" data-cycle-prev=".page-modalidades .cycle-prev" data-cycle-easing="easeInOutExpo" data-cycle-log="false">
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php foreach( $posts as $post ): setup_postdata($post);  ?>
 
 					<li>
 						<div class="cycle-content">
@@ -43,23 +49,24 @@ get_header(); ?>
 							</div> <!-- .conteudo -->
 						</div> <!-- .cycle-content -->
 					</li>
-				<?php endwhile; ?>
-			</ul>
-			<a href="javascript:void(0);" class="cycle-prev"><span class="icon-arrow-left"></span></a>
-			<a href="javascript:void(0);" class="cycle-next"><span class="icon-arrow-right"></span></a>
-		</div> <!-- .page-modalidades -->
-		<?php
-		else :
+					<?php
+					endforeach; 
+					?>			</ul>
+					<a href="javascript:void(0);" class="cycle-prev"><span class="icon-arrow-left"></span></a>
+					<a href="javascript:void(0);" class="cycle-next"><span class="icon-arrow-right"></span></a>
+				</div> <!-- .page-modalidades -->
+				<?php
+				else :
 					// If no content, include the "No posts found" template.
-			get_template_part( 'content', 'none' );
+					get_template_part( 'content', 'none' );
 
-		endif;
-		?>
+				endif;
+				?>
 
-	</div> <!-- .container -->
-</div><!-- #content -->
-</section><!-- #primary -->
+			</div> <!-- .container -->
+		</div><!-- #content -->
+	</section><!-- #primary -->
 
-<?php
-get_sidebar( 'content' );
-get_footer();
+	<?php
+	get_sidebar( 'content' );
+	get_footer();

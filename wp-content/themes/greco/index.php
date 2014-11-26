@@ -84,7 +84,7 @@ get_header(); ?>
 							<ul class="cycle-slideshow" data-cycle-fx="carousel" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-next=".box-modalidades .cycle-next" data-cycle-prev=".box-modalidades .cycle-prev" data-cycle-easing="easeInOutExpo" data-cycle-log="false">
 								<?
 								global $post;
-								$args = array( 'numberposts' => 0, 'category_name' => 'modalidades' );
+								$args = array( 'numberposts' => -1, 'category_name' => 'modalidades' );
 								$posts = get_posts( $args );
 								foreach( $posts as $post ): setup_postdata($post); 
 

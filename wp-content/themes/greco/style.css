@@ -420,6 +420,10 @@ CLASSES START
 .box-modalidades .media {
   overflow: visible;
 }
+.box-modalidades .media > .pull-left img {
+  max-width: 203px;
+  height: auto !important;
+}
 .box-modalidades .media-heading {
   text-transform: uppercase;
   font-size: 18px;
