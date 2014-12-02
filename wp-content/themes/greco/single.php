@@ -32,6 +32,8 @@ get_header(); ?>
 					}*/
 					endwhile;
 					?>
+
+					<p class="text-right"><a href="javascript:void(0);" onclick="window.history.back();">Voltar</a></p>
 				</div> <!-- .container -->
 			</div><!-- #content -->
 		</div><!-- #primary -->
