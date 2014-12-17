@@ -51,7 +51,7 @@ get_header(); ?>
 									js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=607367415995227&version=v2.0";
 									fjs.parentNode.insertBefore(js, fjs);
 								}(document, 'script', 'facebook-jssdk'));</script>
-								<div class="fb-like-box" data-href="https://www.facebook.com/grecoforma" data-width="220" data-height="250" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+								<div class="fb-like-box" data-href="https://www.facebook.com/grecoforma" data-width="270" data-height="250" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
 							</div> <!-- .box-content -->
 						</div> <!-- .box-social -->
 					</div> <!-- .col-md-3 -->

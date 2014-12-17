@@ -39,7 +39,7 @@ get_header(); ?>
 
 					<li>
 						<div class="cycle-content">
-							<div class="imagem"><?php the_post_thumbnail(); ?></div> <!-- .imagem -->
+							<div class="imagem"><?php the_post_thumbnail('full'); ?></div> <!-- .imagem -->
 							<div class="conteudo">
 								<h2 class="title"><?php the_title(); ?></h2>
 								<div class="desc">

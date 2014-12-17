@@ -34,7 +34,14 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 			?>
 			<div role="tabpanel" class="tab-pane fade" id="unidade-<?php echo get_the_ID(); ?>">
-				<?php 
+				
+
+
+				<div class="container">
+					
+					<div class="row">
+						<div class="col-md-1">
+							<?php 
 
 
 				$posttags = get_the_tags();
@@ -49,15 +56,12 @@ get_header(); ?>
 				}
 				// print_r($posttags);
 				?>
-
-
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 col-md-offset-2">
+						</div> <!-- .col-md-1 -->
+						<div class="col-md-5">
 							<div class="imagens">
 								<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-								<a href="<?php echo $large_image_url[0]; ?>" class="destaque" rel="prettyPhoto[unidade-<?php echo get_the_ID(); ?>]" title="<?php echo the_title_attribute( 'echo=0' ); ?>">
-									<?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?> 
+								<a href="<?php echo $large_image_url[0]; ?>" class="destaque img-responsive" rel="prettyPhoto[unidade-<?php echo get_the_ID(); ?>]" title="<?php echo the_title_attribute( 'echo=0' ); ?>">
+									<?php echo get_the_post_thumbnail( get_the_ID(), 'full' ); ?> 
 								</a>
 								<?php
 								$thumb_ID = get_post_thumbnail_id( $post->ID );
@@ -72,9 +76,9 @@ get_header(); ?>
 										<?php 
 										$attachment_id = $image->ID; // attachment ID
 
-										$image_attributes = wp_get_attachment_image_src( $attachment_id ); // returns an array
+										$image_attributes = wp_get_attachment_image_src( $attachment_id, 'full' ); // returns an array
 										?>
-										<li><a href="<?php echo $image_attributes[0]; ?>" rel="prettyPhoto[unidade-<?php echo get_the_ID(); ?>]"><?php echo wp_get_attachment_image($image->ID, 'thumbnail-latest'); ?></a></li>
+										<li class=""><a href="<?php echo $image_attributes[0]; ?>" rel="prettyPhoto[unidade-<?php echo get_the_ID(); ?>]"><?php echo wp_get_attachment_image($image->ID, 'full'); ?></a></li>
 
 									<?php endforeach; ?>
 								</ul>
@@ -83,7 +87,7 @@ get_header(); ?>
 							<!-- This post has no attached images -->
 						<?php endif; ?>
 					</div> <!-- .imagens -->
-				</div>
+				</div> <!-- .col-md-5 -->
 				<div class="col-md-6">
 					<h2 class="media-heading"><?php the_title(); ?></h2>
 					<?php edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' ); ?>

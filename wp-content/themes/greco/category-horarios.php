@@ -26,20 +26,16 @@ get_header(); ?>
 					printf( '<div class="taxonomy-description">%s</div>', $term_description );
 				endif;
 				?>
-				<p class="text-center">Clique em uma das unidades ao lado.</p>
+				<p class="text-center">Clique em uma das unidades.</p>
 			</header><!-- .archive-header -->
 
 		</div> <!-- .container -->
-		<div class="container-fluid page-horarios">
-			<div class="row">
-				<div class="col-md-3">
-					<ul class="nav nav-pills nav-stacked" role="tablist">
+		<div class="container page-horarios">
+					<ul class="nav nav-pills nav-stacked row" role="tablist">
 						<?php while ( have_posts() ) : the_post();?>
-						<li role="presentation" class=""><a href="#unidade-<?php echo get_the_ID(); ?>" role="tab" data-toggle="tab"><?php the_title(); ?> <span class="icone"><span class="icon-arrow-right-sm"></span></span></a></li>
+						<li role="presentation" class="col-md-4 col-sm-6 col-xs-12"><a href="#unidade-<?php echo get_the_ID(); ?>" role="tab" data-toggle="tab"><?php the_title(); ?> <span class="icone"><span class="icon-arrow-right-sm"></span></span></a></li>
 					<?php endwhile; ?>
 				</ul>
-			</div> <!-- .col-md-3 -->
-			<div class="col-md-8 col-md-offset-1">
 				<div class="tab-content">
 					<?php while ( have_posts() ) : the_post();?>
 					<div role="tabpanel" class="tab-pane fade" id="unidade-<?php echo get_the_ID(); ?>">
@@ -49,8 +45,6 @@ get_header(); ?>
 					</div> <!-- .tab-pane -->
 				<?php endwhile; ?>
 			</div> <!-- .tab-content -->
-		</div> <!-- .col-md-8 -->
-	</div> <!-- .row -->
 </div> <!-- .container-fluid -->
 <?php
 					// Previous/next page navigation.

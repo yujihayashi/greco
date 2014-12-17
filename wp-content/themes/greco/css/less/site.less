@@ -43,6 +43,7 @@ small {display: inline-block;line-height: 1.1;}
 textarea {resize:vertical;}
 a {transition: all 0.25s ease 0s;}
 label {font-weight: normal;}
+body {font-size: 16.5px;}
 /*
 FONTS START
 **********************************************************************************************/
@@ -172,15 +173,16 @@ CLASSES START
     background: @primary-color;
     .imagem {
         width: 100%;
-        img {width: 100%;}
+        img {width: 100%;height: auto !important;}
     }
     .conteudo {padding:10px 20px 20px;line-height: 1.1;min-height: 230px;}
     .media-heading {font-size: 28px;text-align: center;}
 }
 .box-modalidades {
-    background: @primary-color;font-size: 12px;color: #201e1e;padding-bottom: 52px;
+    background: @primary-color;font-size: 14px;line-height:1.2;color: #201e1e;padding-bottom: 52px;
     .box-cycle {margin:0 auto;}
     .box-cycle, .cycle-slideshow {width: 850px;position: relative;}
+    .box-cycle, .cycle-slideshow, .cycle-slideshow li {height: 200px;}
     .cycle-slideshow {
         margin-top:-40px;
         li {
@@ -219,7 +221,7 @@ CLASSES START
 .box-social {
     margin-bottom: 30px;
     .box-header {width: 162px;padding:12px 15px;background: #F7F7F7;font-size: 17px;text-transform: uppercase;color: #FFF;}
-    .box-content {padding:25px;background: #FFF;height: 276px;}
+    .box-content {padding:0px;background: #FFF;height: 276px;}
     &.box-social-facebook {
         .box-header {background-color: #4867a8;}
     }
@@ -248,7 +250,10 @@ CLASSES START
         }
         ul {
             padding-left:0;list-style: none;width: 100%;margin:0 -1%;
-            > li {display:block; float: left; width: 31.33333333333333%;margin:0 1% 10px;height: 123px;overflow: hidden;position: relative;}
+            > li {
+                display:block; float: left; width: 31.33333333333333%;margin:0 1% 10px;height: 123px;overflow: hidden;position: relative;
+                img {max-width: 100%;height: auto !important;}
+            }
         }
     }
 }
@@ -267,11 +272,11 @@ CLASSES START
 
 .page-modalidades {
     padding:0 70px;position: relative;overflow: hidden;margin-bottom: 40px;
-    &, .cycle-slideshow, .cycle-slideshow li, .cycle-content, .imagem {height: 334px;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-content, .imagem {height: 434px;}
     .cycle-slideshow {
         width: 100%;
         li {
-            width: 238px;overflow: hidden;
+            width: 290px;overflow: hidden;
             * {white-space: normal;}
         }
         .cycle-content {position: relative;}
@@ -279,16 +284,22 @@ CLASSES START
             position: relative;z-index: 1;
             img {height: 100%;width: auto !important;}
         }
-        .conteudo {position: absolute;left: 0;top: 0;right: 0;bottom: 0;background: url(images/bg-black.png) repeat;z-index: 2;color: #FFF;font-size: 14px;line-height: 1.3;padding:10px 10px;display: none;}
+        .conteudo {position: absolute;left: 0;top: 0;right: 0;bottom: 0;background: url(images/bg-black.png) repeat;z-index: 2;color: #FFF;font-size: 16px;line-height: 1.3;padding:10px 10px;display: none;}
         .title {text-transform: uppercase;font-size: 36px;}
         .plus {display: inline-block;background: #580808;padding:4px 30px 4px 8px;position: absolute;bottom: 20px;left: 0;}
     }
-    .cycle-prev, .cycle-next {display: block;position:absolute;top:0;width: 70px;height: 334px;text-align: center;padding:150px 0;float: left;background: @primary-color;}
+    .cycle-prev, .cycle-next {display: block;position:absolute;top:0;width: 70px;height: 434px;text-align: center;padding:198px 0;float: left;background: @primary-color;}
     .cycle-prev {left: 0;}
     .cycle-next {right: 0;}
 }
 .page-horarios {
-    .nav-pills {margin-top:20px;}
+    .nav-pills {
+        margin-top:20px;
+        > li {
+            float: left;margin-bottom: 15px;
+            + li {margin-top:0;}
+        }
+    }
 }
 .page-contato {
     background: @primary-color;margin-top:150px;padding-bottom: 40px;
@@ -307,7 +318,7 @@ CLASSES START
 
 }
 .tags {
-    list-style: none;position: absolute;left: 0;top: 0;font-size: 18px;padding-left: 30px;width: 46px;
+    list-style: none;position: relative;font-size: 18px;width: 46px;padding-left:0;z-index: 110;
     > li, .title {height: 44px;}
     > li {
         background: #570707;-webkit-border-radius: 50px;-moz-border-radius: 50px;-ms-border-radius: 50px;-o-border-radius: 50px;border-radius: 50px;min-width: 46px;padding-left: 46px;position: relative;margin-bottom: 10px;float: left;clear: both;
@@ -358,6 +369,9 @@ JQUERY UI END
          img {position: relative;}
      }
  }
+ .box-chamadas {
+    > div {margin-bottom: 20px;}
+}
 }
 @media (max-width: 767px) {
    /*    .site-geral:before {content:"TABLET";}*/
@@ -412,6 +426,7 @@ JQUERY UI END
 @media (max-width: 480px) {
    /*#GERAL:before {content:"MOBILE";}*/
    .box-modalidades {
+    .box-cycle, .cycle-slideshow, .cycle-slideshow li {height: 290px;}
     .cycle-slideshow li {width: 200px;}
     .box-cycle {
         img {width: 100%;height:auto;}
@@ -421,6 +436,10 @@ JQUERY UI END
         .media-body {padding-top:10px;}
     }
 }
+    .media {
+        > .pull-left {display: block;float: none !important;}
+        .media-body {padding-top:10px;}
+    }
 .extra-header {
     .site-header {
        .header-social {display: none;}

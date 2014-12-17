@@ -35,16 +35,15 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/stylesheet.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/images/icon.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/site.css">
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/easing/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.swipe.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.scrollVert.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.carousel.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/easing/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bootstrap_site.js"></script>
+	<?php wp_enqueue_script('jQuery', get_template_directory_uri().'/library/jquery-1.9.1.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('bootstrap', get_template_directory_uri().'/library/bootstrap/js/bootstrap.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('easing', get_template_directory_uri().'/library/easing/jquery.easing.1.3.js', array('jquery')); ?>
+	<?php wp_enqueue_script('cycle2', get_template_directory_uri().'/library/cycle2/jquery.cycle2.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('cycle2Swipe', get_template_directory_uri().'/library/cycle2/jquery.cycle2.swipe.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('cycle2ScrollVert', get_template_directory_uri().'/library/cycle2/jquery.cycle2.scrollVert.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('cycle2Carousel', get_template_directory_uri().'/library/cycle2/jquery.cycle2.carousel.min.js', array('jquery')); ?>
+	<?php wp_enqueue_script('prettyPhoto', get_template_directory_uri().'/library/prettyPhoto/js/jquery.prettyPhoto.js', array('jquery')); ?>
+	<?php wp_enqueue_script('bootstrapSite', get_template_directory_uri().'/js/bootstrap_site.js', array('jquery')); ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

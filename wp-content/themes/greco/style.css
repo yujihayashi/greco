@@ -43,6 +43,9 @@ a {
 label {
   font-weight: normal;
 }
+body {
+  font-size: 16.5px;
+}
 /*
 FONTS START
 **********************************************************************************************/
@@ -383,6 +386,7 @@ CLASSES START
 }
 .box .imagem img {
   width: 100%;
+  height: auto !important;
 }
 .box .conteudo {
   padding: 10px 20px 20px;
@@ -395,7 +399,8 @@ CLASSES START
 }
 .box-modalidades {
   background: #ed3237;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.2;
   color: #201e1e;
   padding-bottom: 52px;
 }
@@ -406,6 +411,11 @@ CLASSES START
 .box-modalidades .cycle-slideshow {
   width: 850px;
   position: relative;
+}
+.box-modalidades .box-cycle,
+.box-modalidades .cycle-slideshow,
+.box-modalidades .cycle-slideshow li {
+  height: 200px;
 }
 .box-modalidades .cycle-slideshow {
   margin-top: -40px;
@@ -503,7 +513,7 @@ CLASSES START
   color: #FFF;
 }
 .box-social .box-content {
-  padding: 25px;
+  padding: 0px;
   background: #FFF;
   height: 276px;
 }
@@ -564,6 +574,10 @@ CLASSES START
   overflow: hidden;
   position: relative;
 }
+.lista-unidades .imagens ul > li img {
+  max-width: 100%;
+  height: auto !important;
+}
 .nav-pills > li > a,
 .nav-pills > li .icone {
   height: 44px;
@@ -605,13 +619,13 @@ CLASSES START
 .page-modalidades .cycle-slideshow li,
 .page-modalidades .cycle-content,
 .page-modalidades .imagem {
-  height: 334px;
+  height: 434px;
 }
 .page-modalidades .cycle-slideshow {
   width: 100%;
 }
 .page-modalidades .cycle-slideshow li {
-  width: 238px;
+  width: 290px;
   overflow: hidden;
 }
 .page-modalidades .cycle-slideshow li * {
@@ -637,7 +651,7 @@ CLASSES START
   background: url(images/bg-black.png) repeat;
   z-index: 2;
   color: #FFF;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.3;
   padding: 10px 10px;
   display: none;
@@ -660,9 +674,9 @@ CLASSES START
   position: absolute;
   top: 0;
   width: 70px;
-  height: 334px;
+  height: 434px;
   text-align: center;
-  padding: 150px 0;
+  padding: 198px 0;
   float: left;
   background: #ed3237;
 }
@@ -674,6 +688,13 @@ CLASSES START
 }
 .page-horarios .nav-pills {
   margin-top: 20px;
+}
+.page-horarios .nav-pills > li {
+  float: left;
+  margin-bottom: 15px;
+}
+.page-horarios .nav-pills > li + li {
+  margin-top: 0;
 }
 .page-contato {
   background: #ed3237;
@@ -711,12 +732,11 @@ CLASSES START
 }
 .tags {
   list-style: none;
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   font-size: 18px;
-  padding-left: 30px;
   width: 46px;
+  padding-left: 0;
+  z-index: 110;
 }
 .tags > li,
 .tags .title {
@@ -797,6 +817,9 @@ JQUERY UI END
   .tags > li img {
     position: relative;
   }
+  .box-chamadas > div {
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 767px) {
   /*    .site-geral:before {content:"TABLET";}*/
@@ -860,6 +883,11 @@ JQUERY UI END
 }
 @media (max-width: 480px) {
   /*#GERAL:before {content:"MOBILE";}*/
+  .box-modalidades .box-cycle,
+  .box-modalidades .cycle-slideshow,
+  .box-modalidades .cycle-slideshow li {
+    height: 290px;
+  }
   .box-modalidades .cycle-slideshow li {
     width: 200px;
   }
@@ -872,6 +900,13 @@ JQUERY UI END
     float: none !important;
   }
   .box-modalidades .media .media-body {
+    padding-top: 10px;
+  }
+  .media > .pull-left {
+    display: block;
+    float: none !important;
+  }
+  .media .media-body {
     padding-top: 10px;
   }
   .extra-header .site-header .header-social {
