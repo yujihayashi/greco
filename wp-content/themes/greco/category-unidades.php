@@ -137,13 +137,13 @@ jQuery(document).ready(function () {
 	$('.box-tabs .nav-tabs li:first-child').addClass('active');
 
 	$('.tags > li').hover(function () {
-		if ($(window).width() >= 981) {
+		// if ($(window).width() >= 981) {
 		$(this).find('.title').stop(true, true).delay(100).show({duration: 400, queue: true, easing: 'easeInOutExpo'});
-		}
+		// }
 	}, function () {
-		if ($(window).width() >= 981) {
+		// if ($(window).width() >= 981) {
 		$(this).find('.title').stop(true, true).delay(100).hide({duration: 400, queue: true, easing: 'easeInOutExpo'});
-		}
+		// }
 	});
 });
 </script>

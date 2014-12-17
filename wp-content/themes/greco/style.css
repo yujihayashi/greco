@@ -546,6 +546,7 @@ CLASSES START
 }
 .lista-unidades {
   margin-bottom: 40px;
+  line-height: 1.2;
 }
 .lista-unidades .tab-pane {
   position: relative;
@@ -570,7 +571,7 @@ CLASSES START
   float: left;
   width: 31.33333333333333%;
   margin: 0 1% 10px;
-  height: 123px;
+  height: 98px;
   overflow: hidden;
   position: relative;
 }
