@@ -22,6 +22,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<meta content='Greco Forma, Greco Forma Academia, Academias, Belém' name='keywords'>
+	<meta name="author" content="Greco Forma Academia">
+	<meta name="robots" content="index,follow">
+	<meta name="reply-to" content="agencia1to1@grecoforma.com">
 	<meta content="<?php echo get_template_directory_uri(); ?>/images/favicon.png" itemprop="image">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/png" />
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/png" />
@@ -34,7 +38,6 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/prettyPhoto/css/prettyPhoto.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/stylesheet.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/images/icon.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/site.css">
 	<?php wp_enqueue_script('jQuery', get_template_directory_uri().'/library/jquery-1.9.1.min.js', array('jquery')); ?>
 	<?php wp_enqueue_script('bootstrap', get_template_directory_uri().'/library/bootstrap/js/bootstrap.min.js', array('jquery')); ?>
 	<?php wp_enqueue_script('easing', get_template_directory_uri().'/library/easing/jquery.easing.1.3.js', array('jquery')); ?>

@@ -84,6 +84,5 @@
 	})
 	</script>
 <?php endif; //if (is_category('unidades')): ?>
-	<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
